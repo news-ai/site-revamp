@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:200,400,600,800');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400');
+
+body, html{
+	font-size: 30px;
+	margin: 0px;
+}
+
+.hide-when-mobile{
+	display: none;
+}
+
+#mobile-navigation{
+	background-color: #384083;
+	font-family: 'Raleway', sans-serif;
+	color: #E2E3DD;
+	font-weight: 400;
+	font-size: 2em;
+	padding: 1em 0em 0em 1em;
+}
+
+#mobile-navigation p{
+	margin: 0em;
+}
+
+#landing{
+	flex-flow: column;
+	display: flex;
+	height: 100%;  
+	align-items: center;
+	justify-content: center;
+
+	position: relative;
+	top: -5px;
+
+	background: #384083;
+	font-family: 'Raleway', sans-serif;
+	color: #E2E3DD;
+	text-align: center;
+}
+
+#placeholder{
+	position: relative;
+	top: -10px;
+	height: 10vh;
+	background: #384083;
+}
+
+
+#subtitle{
+	font-weight: 200;
+	font-size: 3.8em;
+	margin: 0.70em;
+}
+
+#subsubtitle{
+	font-weight: 200;
+	font-size: 1.50em;
+	margin: 1em 3.5em 1em 3.5em;
+}
+
+
+#airplane-1{
+	position: absolute;
+	left: 50px;
+	top: 700px;
+} 
+
+
+#airplane-2{
+	position: absolute;
+	right: 120px;
+	top: 50px;
+} 
+
+
+#cloud{
+	position: absolute;
+	right: 0px;
+	top: 100px;
+} 
+
+#free-trial{
+	display: flex;
+	flex-flow:column;
+	align-items: center;
+}
+
+
+#free-email input{
+	border: none;
+	font-family: 'Raleway', sans-serif;
+	font-size: 1.5em;
+	color: #676363;
+	background: #E6E6E6;
+	border-radius: 13px;
+	padding: 0.60em 0.60em 0.60em 0.75em; 
+	margin: 1em 0em 0em 0em;
+}
+
+.button{
+	display: none;
+}
+
+.button-mobile{
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	font-family: 'Raleway', sans-serif;
+	font-weight: 400;
+	border-radius: 13px;
+	color: #FFFFFF;
+	text-align: center;
+    font-size: 1.40em;
+	background-color: #F22F2F;
+    padding: 0.60em 0.75em 0.60em 0.75em; 
+	margin: 1em 0em 1em 0em;
+}
+
+.button-mobile p{
+	margin: 0em;
+}
+
+/* content */ 
+#content{
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+	text-align: center;
+	background-color: #ECECEC;
+}
+
+#boat{
+	margin: 1em 0em 0em 0em;
+}
+
+.tagline{
+	font-family: 'Raleway', sans-serif;
+	font-size: 1em;
+	color: #5a5a5a; 
+	margin: 0.80em 3em 0.80em 3em;
+}
+
+.feature{
+	justify-content: center;
+	align-items: center;
+	display: flex;
+	flex-flow: column;
+	background-color: #F8F8F8;
+	height: 100%;
+	margin: 2em 0em 2em 0em;
+}
+
+.feature-title p{
+	margin: 0; 
+	font-weight: 200;
+	color: #384083;
+	font-family: 'Raleway', sans-serif;
+	font-size: 2.5em;
+}
+
+
+.description{
+	justify-content: center;
+	align-items: center;
+	display: flex;
+	flex-flow: column;
+}
+
+.feature-description{
+	font-weight: 300;
+	font-family: 'Open Sans', sans-serif;
+	color: #212121;
+	font-size: 1.30em;
+	padding-left: 10vw;
+	padding-right: 10vw;
+}
+
+.feature-image{
+	margin: 1em 0em 1em 0em;
+}
+
+.feature-image img{
+	width: 80%;
+	height: auto;
+}
+
+
+.feature-learn-more p{
+	font-weight: 400;
+	font-family: 'Raleway', sans-serif;
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+
+	border-radius: 13px;
+	color: #FFFFFF;
+    font-size: 1.20em;
+	padding: 0.80em 1.10em 0.80em 1.10em;
+	margin: 1em 0em 2em 0em;
+	background-color: #384083;
+}
+
+
+/* reqeust a demo */ 
+.request-demo{
+	display: flex;
+	flex-flow: column;
+	justify-content:center;
+	align-items: center;
+	margin: 1em;
+	text-align: center;
+	background: #F8F8F8;
+	width: 90%;
+	font-family: 'Raleway', sans-serif;
+	border-radius: 2px;
+}
+
+.demo-title{
+	font-weight: 200;
+	color: #384083;
+	font-size: 2em;
+	margin: 1em 0em 0.20em 0em;
+}
+
+.walkthrough{
+	font-weight: 200;
+	font-size: 1.40em;
+	margin: 0.50em 1.60em 1.20em 1.60em;
+}
+
+
+.demo-input input{
+	border: none;
+	font-family: 'Raleway', sans-serif;
+	font-size: 1.30em;
+	color: #676363;
+	background: #E6E6E6;
+	border-radius: 13px;
+	padding: 0.80em 1.10em 0.80em 1.10em;
+	margin: 0.60em 0em 0.60em 0em;
+}
+
+
+/* footer */ 
+#footer{
+	text-align: center;
+	background-color: #384083;
+	padding: 1em;
+}
+
+#social-media{
+	display: flex;
+}
+
+.social-media-image{
+	width: 5%;
+	margin-left: 0.25em;
+	margin-right: 0.25em;
+}
+
+.pr-daily{
+	width: 300px;
+	height: auto;
+}

@@ -5,7 +5,10 @@ import {
   Link
 } from 'react-router-dom';
 import logo from './logo.svg';
-import './App.css';
+import './css/stylesheet.css';
+import './css/stylesheet-medium.css';
+import './css/stylesheet-wide.css';
+import './css/stylesheet-wider.css';
 
 class App extends Component {
   render() {

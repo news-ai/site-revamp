@@ -1,0 +1,73 @@
+/* chance the margins + layout feature */ 
+
+@media only screen and (min-width: 800px) {
+	.feature {
+		width: 100%;
+	    max-width: 950px;
+	    flex-flow: row;
+	    justify-content: center;
+	    margin: 1.50em 3.50em 1.50em 3.50em;
+	    padding: 1em 2em 1em 2em;
+	}
+
+	.description {
+		max-width: 450px;
+	}
+
+	.description-margin {
+		margin: 0em 0em 0em 3em;
+	}
+
+	.left-align {
+		text-align: left;
+		padding: 0em 0em 0em 0.80em;
+	}
+
+	.feature-description p {
+		text-align: left;
+	}
+
+	.feature-learn-more {
+		justify-content: left;
+	}
+
+	.feature-learn-more p {
+		margin: 0em 0em 2em 1.50em;
+	}
+
+	.switch-image {
+		order: 1;
+	}
+
+	.switch-description {
+		order: 0;
+	}
+
+	#tagline{
+		max-width: 1000px;
+	}
+
+	#cloud img {
+		height: 90px;
+		width: auto;
+	}
+
+	#airplane-2 img {
+		height: 90px;
+		width: auto;
+	}
+
+	#airplane-1 img {
+		height: 90px;
+		width: auto;
+	}
+
+	#request-demo {
+		width: 100%;
+		max-width: 550px;
+	}
+
+	#seen-in {
+		max-width: 550px;
+	}
+}
