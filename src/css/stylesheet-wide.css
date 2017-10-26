@@ -3,11 +3,11 @@
 @media only screen and (min-width: 800px) {
 	.feature {
 		width: 100%;
-	    max-width: 950px;
-	    flex-flow: row;
-	    justify-content: center;
-	    margin: 1.50em 3.50em 1.50em 3.50em;
-	    padding: 1em 2em 1em 2em;
+    max-width: 950px;
+    flex-flow: row;
+    justify-content: center;
+    margin: 1.50em 3.50em 1.50em 3.50em;
+    padding: 1em 2em 1em 2em;
 	}
 
 	.description {
