@@ -43,11 +43,7 @@ const Home = props => {
             <div id='subsubtitle'> A list building and email distribution tool for PR professionals </div> 
           </div>
 
-          <div id='airplane-2'> 
-            <img alt='second airplane background image' src={airplane2Img} /> 
-          </div>
-
-          <div id='demo-landing'> 
+          <div id='demo-landing' > 
             <div id='demo-email'>
               <input type='text' name='email' placeholder='email@company.com' />
             </div> 
@@ -55,6 +51,11 @@ const Home = props => {
               <p> Request a Demo </p>
             </div> 
           </div>
+
+          <div id='airplane-2'> 
+            <img alt='second airplane background image' src={airplane2Img} /> 
+          </div>
+
         </div> 
         
 
@@ -179,6 +180,10 @@ const Home = props => {
     );
 }
 
+const PricingPage = props => (
+  <div>PRICING</div>
+  );
+
 class App extends Component {
   render() {
     return (
@@ -193,8 +198,8 @@ class App extends Component {
             <div className='hide-narrow'> 
               <nav id='scrollnav'> 
                 <ul id='left-scroll'>
-                  <li className='left-list logo-3'><Link to='/'> NewsAI </Link></li> 
-                  <li className='left-list'> Pricing </li> 
+                  <li className='left-list logo-3'><Link to='/' style={{textDecoration: 'none'}}> NewsAI </Link></li> 
+                  <li className='left-list'><Link to='/pricing' style={{textDecoration: 'none'}}> Pricing </Link></li> 
                   <li className='left-list'> Blog </li> 
                 </ul> 
                 <ul id='right-scroll'> 
@@ -203,11 +208,13 @@ class App extends Component {
                 </ul> 
               </nav> 
               <nav id='navbar'>   
-                <div className='logo-2'> 
-                  <p> NewsAI </p> 
-                </div> 
+                <Link to='/'>
+                  <div className='logo-2'> 
+                    <p> NewsAI </p> 
+                  </div>
+                </Link>
                 <ul className='right-nav'> 
-                  <li className='link-nav'> Pricing </li> 
+                  <Link to='/pricing' style={{textDecoration: 'none', color: 'white'}}><li className='link-nav'> Pricing </li></Link>
                   <li className='link-nav'> Blog </li> 
                   <li className='link-nav login-nav'> Login </li> 
                 </ul>  
@@ -216,6 +223,7 @@ class App extends Component {
           </div>
 
           <Route exact path='/' component={Home} />
+          <Route path='/pricing' component={PricingPage} />
         </div>
       </Router>
 
