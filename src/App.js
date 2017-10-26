@@ -56,11 +56,11 @@ class App extends Component {
           </div> 
 
           <div id='airplane-1'> 
-            <img src={airplane1Img} /> 
+            <img alt='airplane background image' src={airplane1Img} /> 
           </div> 
 
           <div id='cloud'> 
-            <img src={cloudImg} /> 
+            <img alt='cloud background image' src={cloudImg} /> 
           </div> 
 
           <div className='flex-center'> 
@@ -72,7 +72,7 @@ class App extends Component {
           </div>
 
           <div id='airplane-2'> 
-            <img src={airplane2Img} /> 
+            <img alt='second airplane background image' src={airplane2Img} /> 
           </div>
 
           <div id='demo-landing'> 
@@ -87,7 +87,7 @@ class App extends Component {
         
           <div id='content'> 
             <div id='boat'> 
-              <img src={boatImg} /> 
+              <img alt='boat background image' src={boatImg} /> 
             </div> 
             <div className='flex-center'> 
               <div id='tagline'> Streamline your workflow with tools made for public relations professionals.</div> 
@@ -95,7 +95,7 @@ class App extends Component {
             <div className='flex-center'> 
               <div className='feature'> 
                 <div className='feature-image'>
-                  <img src={birdImg} /> 
+                  <img alt='bird background image' src={birdImg} /> 
                 </div> 
                 <div className='description description-margin'> 
                   <div className='feature-title left-align'> 
@@ -113,7 +113,7 @@ class App extends Component {
             <div className='flex-center'> 
               <div className='feature'> 
                 <div className='feature-image switch-image'>
-                  <img src={foxImg} /> 
+                  <img alt='fox background image' src={foxImg} /> 
                 </div> 
                 <div className='description switch-description'> 
                   <div className='feature-title left-align'>
@@ -131,7 +131,7 @@ class App extends Component {
             <div className='flex-center'> 
               <div className='feature'> 
                 <div className='feature-image'>
-                  <img src={snailImg} /> 
+                  <img alt='snail background image' src={snailImg} /> 
                 </div> 
                 <div className='description description-margin'> 
                   <div className='feature-title left-align'> 
@@ -149,7 +149,7 @@ class App extends Component {
             <div className='flex-center'> 
               <div className='feature'> 
                 <div className='feature-image switch-image'>
-                  <img src={collarborateImg} /> 
+                  <img alt='collaborate background image' src={collarborateImg} /> 
                 </div> 
                 <div className='description switch-description'> 
                   <div className='feature-title left-align'>
@@ -170,7 +170,7 @@ class App extends Component {
                   <p> As Seen In </p> 
                 </div> 
                 <div className='logos'> 
-                  <img src={prDailyLogo} /> 
+                  <img alt='airplane background image' src={prDailyLogo} /> 
                 </div> 
               </div> 
             </div> 
@@ -195,10 +195,10 @@ class App extends Component {
             </div> 
           </div> 
         <div id='footer'> 
-          <img className='social-media-image' src={facebookLogo} />
-          <img className='social-media-image' src={linkedinLogo} />
-          <img className='social-media-image' src={mediumLogo} />
-          <img className='social-media-image' src={twitterLogo} />
+          <img alt='facebook logo' className='social-media-image' src={facebookLogo} />
+          <img alt='linkedin logo' className='social-media-image' src={linkedinLogo} />
+          <img alt='medium logo' className='social-media-image' src={mediumLogo} />
+          <img alt='twitter logo' className='social-media-image' src={twitterLogo} />
         </div> 
       </div> 
     );
