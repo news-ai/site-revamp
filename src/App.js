@@ -44,11 +44,6 @@ class Slider extends Component {
     const topIndex = (currentPage + 1) * setSize;
     const showingChildren = children.filter((_, i) => i >= bottomIndex && i < topIndex);
 
-    // 8
-    console.log('bottomIndex', bottomIndex);
-    console.log('topIndex', topIndex);
-    console.log(currentPage);
-
     return (
       <div style={containerStyle} >
         <i
@@ -58,7 +53,7 @@ class Slider extends Component {
         aria-hidden='true'
         />
         <div className='vertical-center'>
-        {showingChildren.map((child, i) => <div key={`photo-${i}`} >{child}</div>)}
+        {showingChildren.map((child, i) => <div key={`photo-${i}`} style={{margin: 5}} >{child}</div>)}
         </div>
         <i
         className='fa fa-arrow-right'
@@ -113,6 +108,53 @@ const Home = props => {
           <div className='flex-center'> 
             <div id='tagline'> Streamline your workflow with tools made for public relations professionals.</div> 
           </div> 
+
+          <div style={{
+            display: 'flex',
+            justifyContent: 'space-around',
+            flexFlow: 'row wrap',
+            marginTop: 20
+          }} >
+            <div style={{
+              flexBasis: 500,
+              background: '#F8F8F8',
+              margin: '10px 0',
+              padding: 10,
+            }} >
+              <h4>Freelancer/Small Agency</h4>
+              <div style={{
+                display: 'flex',
+                flexDirection: 'column',
+                padding: 3,
+              }} >
+                <div>THIS IS A FEATURE LINE</div>
+                <div>THIS IS A FEATURE LINE</div>
+                <div>THIS IS A FEATURE LINE</div>
+                <div>THIS IS A FEATURE LINE</div>
+                <div>THIS IS A FEATURE LINE</div>
+              </div>
+            </div>
+            <div style={{
+              flexBasis: 500,
+              background: '#F8F8F8',
+              margin: '10px 0',
+              padding: 10,
+            }} >
+              <h4>Mid-size/Large Agency</h4>
+              <div style={{
+                display: 'flex',
+                flexDirection: 'column',
+                padding: 3,
+              }} >
+                <div>THIS IS A FEATURE LINE</div>
+                <div>THIS IS A FEATURE LINE</div>
+                <div>THIS IS A FEATURE LINE</div>
+                <div>THIS IS A FEATURE LINE</div>
+                <div>THIS IS A FEATURE LINE</div>
+              </div>
+            </div>
+          </div>
+
           <div className='flex-center'> 
             <div className='feature'> 
               <div className='feature-image'>
@@ -218,62 +260,63 @@ const Home = props => {
           </div> 
 
 
-          <div className='feature-title'>
-            <p> Trusted by Many </p> 
-          </div> 
-          <div className='flex-center' style={{margin: '50px 0'}} > 
-            <Slider
-            containerStyle={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              maxWidth: 800,
-              minHeight: 250,
-              minWidth: 600,
-              background: '#fff',
-              padding: 10,
-            }} slidesToShow={3} >
-              <div>
-                <a className='navbar-brand' target='_mstudio' href='https://mdidit.com/'>
-                  <img width='200px' src='https://s3.us-east-2.amazonaws.com/www.newsai.co/images/customers/mstudio.png' alt='M Studio' />
-                </a>
-              </div>
-              <div>
-                <a className='navbar-brand' target='_inventpr' href='https://www.inventpr.com/'>
-                  <img width='200px' src='https://s3.us-east-2.amazonaws.com/www.newsai.co/images/customers/inventpr.png' alt='Invent PR' />
-                </a>
-              </div>
-              <div>
-                <a className='navbar-brand' target='_allenmc' href='https://www.allenmc.co/'>
-                  <img width='100px' src='https://s3.us-east-2.amazonaws.com/www.newsai.co/images/customers/allenmc.gif' alt='Allen MC' />
-                </a>
-              </div>
-              <div>
-                <a className='navbar-brand' target='_tripwhisperer' href='http://www.tripwhisperer.nyc/'>
-                  <img width='200px' src='https://s3.us-east-2.amazonaws.com/www.newsai.co/images/customers/tripwhisperer.png' alt='Trip Whisperer' />
-                </a>
-              </div>
-              <div>
-                <a className='navbar-brand' target='_oasispr' href='http://www.oasis-pr.com/'>
-                  <img width='200px' src='https://s3.us-east-2.amazonaws.com/www.newsai.co/images/customers/oasispr.png' alt='Oasis PR' />
-                </a>
-              </div>
-              <div>
-                <a className='navbar-brand' target='_statepr' href='http://statepr.com'>
-                  <img width='150px' src='https://s3.us-east-2.amazonaws.com/www.newsai.co/images/customers/statepr.jpg' alt='State PR' />
-                </a>
-              </div>
-              <div>
-                <a className='navbar-brand' target='_sowrdandthescript' href='https://www.swordandthescript.com/'>
-                  <img width='250px' src='https://www.swordandthescript.com/wp-content/uploads/2016/05/header-new-1.jpg' alt='Sword and The Script' />
-                </a>
-              </div>
-              <div>
-                <a className='navbar-brand' target='_prchicago' href='https://www.prchicago.com'>
-                  <img width='100px' src='https://s3.us-east-2.amazonaws.com/www.newsai.co/images/customers/prchicago.jpg' alt='PR Chicago' />
-                </a>
-              </div>
-            </Slider>
+          <div className='flex-center' style={{margin: '30px 0'}} > 
+            <div style={{background: '#fff'}} >
+              <div className='feature-title'>
+                <p> Trusted by Many </p> 
+              </div> 
+              <Slider
+              containerStyle={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                maxWidth: 800,
+                minHeight: 250,
+                minWidth: 650,
+                padding: 10,
+              }} slidesToShow={3} >
+                <div>
+                  <a className='navbar-brand' target='_mstudio' href='https://mdidit.com/'>
+                    <img width='200px' src='https://s3.us-east-2.amazonaws.com/www.newsai.co/images/customers/mstudio.png' alt='M Studio' />
+                  </a>
+                </div>
+                <div>
+                  <a className='navbar-brand' target='_inventpr' href='https://www.inventpr.com/'>
+                    <img width='200px' src='https://s3.us-east-2.amazonaws.com/www.newsai.co/images/customers/inventpr.png' alt='Invent PR' />
+                  </a>
+                </div>
+                <div>
+                  <a className='navbar-brand' target='_allenmc' href='https://www.allenmc.co/'>
+                    <img width='100px' src='https://s3.us-east-2.amazonaws.com/www.newsai.co/images/customers/allenmc.gif' alt='Allen MC' />
+                  </a>
+                </div>
+                <div>
+                  <a className='navbar-brand' target='_tripwhisperer' href='http://www.tripwhisperer.nyc/'>
+                    <img width='200px' src='https://s3.us-east-2.amazonaws.com/www.newsai.co/images/customers/tripwhisperer.png' alt='Trip Whisperer' />
+                  </a>
+                </div>
+                <div>
+                  <a className='navbar-brand' target='_oasispr' href='http://www.oasis-pr.com/'>
+                    <img width='200px' src='https://s3.us-east-2.amazonaws.com/www.newsai.co/images/customers/oasispr.png' alt='Oasis PR' />
+                  </a>
+                </div>
+                <div>
+                  <a className='navbar-brand' target='_statepr' href='http://statepr.com'>
+                    <img width='150px' src='https://s3.us-east-2.amazonaws.com/www.newsai.co/images/customers/statepr.jpg' alt='State PR' />
+                  </a>
+                </div>
+                <div>
+                  <a className='navbar-brand' target='_sowrdandthescript' href='https://www.swordandthescript.com/'>
+                    <img width='250px' src='https://www.swordandthescript.com/wp-content/uploads/2016/05/header-new-1.jpg' alt='Sword and The Script' />
+                  </a>
+                </div>
+                <div>
+                  <a className='navbar-brand' target='_prchicago' href='https://www.prchicago.com'>
+                    <img width='100px' src='https://s3.us-east-2.amazonaws.com/www.newsai.co/images/customers/prchicago.jpg' alt='PR Chicago' />
+                  </a>
+                </div>
+              </Slider>
+            </div>
           </div> 
       
         </div> 
@@ -319,7 +362,21 @@ class App extends Component {
                 <ul className='right-nav'> 
                   <Link to='/pricing' style={{textDecoration: 'none', color: 'white'}}><li className='link-nav'> Pricing </li></Link>
                   <li className='link-nav'><a href='https://www.newsai.co/blog/' style={{textDecoration: 'none', color:'white'}}> Blog </a></li> 
-                  <li className='link-nav login-nav'> Login </li> 
+                  <a
+                  href='https://tabulae.newsai.co'
+                  className='link-nav'
+                  style={{
+                    textDecoration: 'none',
+                    background: 'Transparent',
+                    color: '#FFFFFF',
+                    borderRadius: 5,
+                    padding: '4px 14px 4px 14px',
+                    border: '1.5px solid white',
+                    listStyleType: 'none',
+                    fontFamily: "'Raleway', sans-serif",
+                    fontWeight: 200,
+                    fontSize: '1em',
+                  }} > Login </a>
                 </ul>  
               </nav> 
             </div> 
