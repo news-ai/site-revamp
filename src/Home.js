@@ -8,11 +8,29 @@ import boatImg from './images/boat.png';
 import birdImg from './images/bird-mobile.png';
 import foxImg from './images/fox-mobile.png';
 import snailImg from './images/snail-mobile.png';
-import collarborateImg from './images/collaborate-mobile.png';
+import collaborateImg from './images/collaborate-mobile.png';
 import prDailyLogo from './images/pr_daily.png';
 
 const BASEBLUE = '#384083';
 const BASERED = '#ff0000';
+const BASEGREEN = '#488209';
+
+const OutlineButton = ({children, color, style}) => (
+  <button
+  style={Object.assign({}, {
+    textDecoration: 'none',
+    background: 'Transparent',
+    color: color || 'black',
+    borderRadius: 5,
+    padding: '4px 14px 4px 14px',
+    border: `1.5px solid ${color || 'black'}`,
+    listStyleType: 'none',
+    fontFamily: "'Raleway', sans-serif",
+    fontWeight: 200,
+    fontSize: '1em',
+  }, style)}
+  > {children} </button>
+  );
 
 const Home = props => {
   return (
@@ -116,21 +134,9 @@ const Home = props => {
                 <div>THIS IS A FEATURE LINE</div>
                 <div>THIS IS A FEATURE LINE</div>
               </div>
-              <div style={{marginTop: 20}} >
-                <button
-                style={{
-                  textDecoration: 'none',
-                  background: 'Transparent',
-                  color: BASERED,
-                  borderRadius: 5,
-                  padding: '4px 14px 4px 14px',
-                  border: `1.5px solid ${BASERED}`,
-                  listStyleType: 'none',
-                  fontFamily: "'Raleway', sans-serif",
-                  fontWeight: 200,
-                  fontSize: '1em',
-                }}
-                > Learn More </button>
+              <div style={{marginTop: 20, display: 'flex', flexDirection: 'row', justifyContent: 'center'}} >
+                <OutlineButton color={BASEGREEN} style={{margin: '0 5px'}} >Learn More</OutlineButton>
+                <OutlineButton color={BASERED} style={{margin: '0 5px'}} >Book a Demo</OutlineButton>
               </div>
             </div>
           </div>
@@ -192,7 +198,7 @@ const Home = props => {
           <div className='flex-center'> 
             <div className='feature'> 
               <div className='feature-image switch-image'>
-                <img alt='collaborate background image' src={collarborateImg} /> 
+                <img alt='collaborate background image' src={collaborateImg} /> 
               </div> 
               <div className='description switch-description'> 
                 <div className='feature-title left-align'>
