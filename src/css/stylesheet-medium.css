@@ -3,7 +3,7 @@
 	#demo-landing {
 		order: 0;
 		display: flex;
-		flex-flow:row;
+		flex-flow: row;
 		justify-content: center;
 	}
 
