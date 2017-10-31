@@ -23,6 +23,9 @@ import './css/stylesheet-medium.css';
 import './css/stylesheet-wide.css';
 import './css/stylesheet-wider.css';
 
+const BASEBLUE = '#384083';
+const BASERED = '#ff0000';
+
 class Slider extends Component {
   constructor(props) {
     super(props);
@@ -133,6 +136,22 @@ const Home = props => {
                 <div>THIS IS A FEATURE LINE</div>
                 <div>THIS IS A FEATURE LINE</div>
               </div>
+              <div style={{marginTop: 20}} >
+                <button
+                style={{
+                  textDecoration: 'none',
+                  background: 'Transparent',
+                  color: BASERED,
+                  borderRadius: 5,
+                  padding: '4px 14px 4px 14px',
+                  border: `1.5px solid ${BASERED}`,
+                  listStyleType: 'none',
+                  fontFamily: "'Raleway', sans-serif",
+                  fontWeight: 200,
+                  fontSize: '1em',
+                }}
+                > 7-Day Free Trial </button>
+              </div>
             </div>
             <div style={{
               flexBasis: 500,
@@ -151,6 +170,22 @@ const Home = props => {
                 <div>THIS IS A FEATURE LINE</div>
                 <div>THIS IS A FEATURE LINE</div>
                 <div>THIS IS A FEATURE LINE</div>
+              </div>
+              <div style={{marginTop: 20}} >
+                <button
+                style={{
+                  textDecoration: 'none',
+                  background: 'Transparent',
+                  color: BASERED,
+                  borderRadius: 5,
+                  padding: '4px 14px 4px 14px',
+                  border: `1.5px solid ${BASERED}`,
+                  listStyleType: 'none',
+                  fontFamily: "'Raleway', sans-serif",
+                  fontWeight: 200,
+                  fontSize: '1em',
+                }}
+                > Learn More </button>
               </div>
             </div>
           </div>
@@ -367,7 +402,6 @@ class App extends Component {
                   className='link-nav'
                   style={{
                     textDecoration: 'none',
-                    background: 'Transparent',
                     color: '#FFFFFF',
                     borderRadius: 5,
                     padding: '4px 14px 4px 14px',
