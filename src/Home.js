@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Slider from './Slider';
 import styled from 'styled-components';
+import {Link} from 'react-router-dom';
+import Dialog from 'material-ui/Dialog';
 
 import airplane1Img from './images/airplane-2.png';
 import airplane2Img from './images/airplane-1.png';
@@ -11,6 +13,28 @@ import foxImg from './images/fox-mobile.png';
 import snailImg from './images/snail-mobile.png';
 import collaborateImg from './images/collaborate-mobile.png';
 import prDailyLogo from './images/pr_daily.png';
+
+function LightenDarkenColor(col, amt) {
+  var usePound = false;
+  if (col[0] == "#") {
+    col = col.slice(1);
+    usePound = true;
+  }
+
+  var num = parseInt(col,16);
+  var r = (num >> 16) + amt;
+  if (r > 255) r = 255;
+  else if  (r < 0) r = 0;
+
+  var b = ((num >> 8) & 0x00FF) + amt;
+  if (b > 255) b = 255;
+  else if  (b < 0) b = 0;
+
+  var g = (num & 0x0000FF) + amt;
+  if (g > 255) g = 255;
+  else if (g < 0) g = 0;
+  return (usePound?"#":"") + (g | (b << 8) | (r << 16)).toString(16);
+}
 
 const BASEBLUE = '#384083';
 const BASERED = '#ff0000';
@@ -28,13 +52,18 @@ const RoundedInput = styled.input`
 const OutlinedButton = styled.div`
   display: inline-block;
   text-decoration: none;
-  color: ${props => props.color ? props.color : 'black'};
   border-radius: 5px;
   padding: 4px 14px 4px 14px;
   border: 1.5px solid ${props => props.color ? props.color : 'black'};
+  color: ${props => props.color || '#000'};
   font-family: "Raleway", sans-serif;
-  font-weight: 200;
+  font-weight: 400;
   font-size: 1em;
+  &:hover {
+    border: 1.5px solid ${props => LightenDarkenColor(props.color || '#000', -40)};
+    color: ${props => LightenDarkenColor(props.color || '#000', -40)};
+    cursor: pointer;
+  }
 `;
 
 const SolidButton = styled.div`
@@ -49,7 +78,7 @@ const SolidButton = styled.div`
   font-size: 1em;
 
   &:hover {
-    background: #D32F2F;
+    background: ${props => LightenDarkenColor(props.color || BASERED, -30)};
     cursor: pointer;
   }
 `;
@@ -85,12 +114,17 @@ const Landing = props => (
         justifyContent: 'center',
         marginTop: 20,
       }} > 
-        <div style={{margin: '0 5px'}}>
-          <RoundedInput type='text' name='email' placeholder='email@company.com' />
-        </div>
-        <div style={{margin: '0 5px'}}>
-          <SolidButton> Request a Demo </SolidButton>
-        </div>
+        <form id='subForm' action='http://email3.newsai.co/t/d/s/pbjhr/' method='post'>
+          <div style={{margin: '0 5px'}}>
+            <RoundedInput type='text' id='fieldName' name='cm-name' />
+          </div>
+          <div style={{margin: '0 5px'}}>
+            <RoundedInput required type='text' id='fieldEmail' name='cm-pbjhr-pbjhr' placeholder='email@company.com' />
+          </div>
+          <div style={{margin: '0 5px'}}>
+            <SolidButton type='submit' > Request a Demo </SolidButton>
+          </div>
+        </form>
       </div>
 
       <div id='airplane-2'> 
@@ -135,8 +169,17 @@ const Home = props => {
                 <div>THIS IS A FEATURE LINE</div>
                 <div>THIS IS A FEATURE LINE</div>
               </div>
-              <div style={{marginTop: 20}} >
-                <OutlinedButton color={BASEGREEN} > 7-Day Free Trial </OutlinedButton>
+              <div style={{marginTop: 20, display: 'flex', flexDirection: 'row', justifyContent: 'center'}} >
+                <div style={{margin: '0 5px'}} >
+                  <Link to='/products'>
+                    <OutlinedButton color={BASEGREEN} > Learn More </OutlinedButton>
+                  </Link>
+                </div>
+                <div style={{margin: '0 5px'}} >
+                  <a href='https://tabulae.newsai.co' style={{textDecoration: 'none'}} >
+                    <OutlinedButton color={BASERED} > 7-Day Free Trial </OutlinedButton>
+                  </a>
+                </div>
               </div>
             </div>
             <div style={{
