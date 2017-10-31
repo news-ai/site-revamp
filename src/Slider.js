@@ -13,7 +13,6 @@ class Slider extends Component {
   render() {
     const {children, slidesToShow, containerStyle} = this.props;
     const {currentPage} = this.state;
-    let configs = [];
 
     const numSlidesPerView = slidesToShow || 1;
     const setSize = Math.ceil(children.length / numSlidesPerView);

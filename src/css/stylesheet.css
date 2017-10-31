@@ -156,14 +156,17 @@ body {
 }
 
 .cloud.smaller {
-  margin-right: 400px;
-  width: 100px;
+/*  margin-right: 400px;
+*/  width: 100px;
   margin-top: 50px;
 }
 
 .cloud.small {
-/*  margin-right: 200px;
-*/  width: 150px;
+	width: 150px;
+}
+
+.cloud.distant {
+	z-index: 1;
 }
 
 .cloud {
@@ -184,6 +187,12 @@ body {
   animation-direction: forwards;
   animation-iteration-count: infinite;
   animation-duration: 12s;
+}
+
+.cloud.slower {
+  -webkit-animation-duration: 16s;
+  -moz-animation-duration: 16s;
+  animation-duration: 16s;
 }
 
 @-webkit-keyframes cloud-movement {
