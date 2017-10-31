@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Slider from './Slider';
+import styled from 'styled-components';
 
 import airplane1Img from './images/airplane-2.png';
 import airplane2Img from './images/airplane-1.png';
@@ -14,59 +15,94 @@ import prDailyLogo from './images/pr_daily.png';
 const BASEBLUE = '#384083';
 const BASERED = '#ff0000';
 const BASEGREEN = '#488209';
+const RoundedInput = styled.input`
+  border: none;
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.15em;
+  color: #676363;
+  background: #E6E6E6;
+  border-radius: 6px;
+  padding: 0.5em; 
+`;
 
-const OutlineButton = ({children, color, style}) => (
-  <button
-  style={Object.assign({}, {
-    textDecoration: 'none',
-    background: 'Transparent',
-    color: color || 'black',
-    borderRadius: 5,
-    padding: '4px 14px 4px 14px',
-    border: `1.5px solid ${color || 'black'}`,
-    listStyleType: 'none',
-    fontFamily: "'Raleway', sans-serif",
-    fontWeight: 200,
-    fontSize: '1em',
-  }, style)}
-  > {children} </button>
+const OutlinedButton = styled.div`
+  display: inline-block;
+  text-decoration: none;
+  color: ${props => props.color ? props.color : 'black'};
+  border-radius: 5px;
+  padding: 4px 14px 4px 14px;
+  border: 1.5px solid ${props => props.color ? props.color : 'black'};
+  font-family: "Raleway", sans-serif;
+  font-weight: 200;
+  font-size: 1em;
+`;
+
+const SolidButton = styled.div`
+  display: inline-block;
+  text-decoration: none;
+  transition: background 0.5s ease;
+  font-weight: 400;
+  color: #FFFFFF;
+  background: ${props => props.color || BASERED};
+  border-radius: 6px;
+  padding: 0.7em 1em;
+  font-size: 1em;
+
+  &:hover {
+    background: #D32F2F;
+    cursor: pointer;
+  }
+`;
+
+const Landing = props => (
+    <div style={{
+      display: 'flex',
+      flexFlow: 'column',
+      // background: '#384083',
+      fontFamily: '"Raleway", sans-serif',
+      color: '#E2E3DD',
+      position: 'relative'
+    }} >
+      <div id='airplane-1'> 
+        <img alt='airplane background image' src={airplane1Img} /> 
+      </div> 
+
+      <div id='cloud'> 
+        <img alt='cloud background image' src={cloudImg} /> 
+      </div> 
+
+      <div className='flex-center'> 
+        <div id='subtitle'> Send personalized pitches with less work </div> 
+      </div>
+
+      <div className='flex-center'> 
+        <div id='subsubtitle'> A list building and email distribution tool for PR professionals </div> 
+      </div>
+
+      <div style={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        marginTop: 20,
+      }} > 
+        <div style={{margin: '0 5px'}}>
+          <RoundedInput type='text' name='email' placeholder='email@company.com' />
+        </div>
+        <div style={{margin: '0 5px'}}>
+          <SolidButton> Request a Demo </SolidButton>
+        </div>
+      </div>
+
+      <div id='airplane-2'> 
+        <img alt='second airplane background image' src={airplane2Img} /> 
+      </div>
+    </div> 
   );
 
 const Home = props => {
   return (
-      <div id='landing'>
-        <div>
-          <div id='airplane-1'> 
-            <img alt='airplane background image' src={airplane1Img} /> 
-          </div> 
-
-          <div id='cloud'> 
-            <img alt='cloud background image' src={cloudImg} /> 
-          </div> 
-
-          <div className='flex-center'> 
-            <div id='subtitle'> Send personalized pitches with less work </div> 
-          </div>
-
-          <div className='flex-center'> 
-            <div id='subsubtitle'> A list building and email distribution tool for PR professionals </div> 
-          </div>
-
-          <div id='demo-landing' > 
-            <div id='demo-email'>
-              <input type='text' name='email' placeholder='email@company.com' />
-            </div> 
-            <div id='request-demo-button'> 
-              <p> Request a Demo </p>
-            </div> 
-          </div>
-
-          <div id='airplane-2'> 
-            <img alt='second airplane background image' src={airplane2Img} /> 
-          </div>
-        </div> 
-        
-
+      <div>
+        <Landing /> 
         <div id='content'> 
           <div id='boat'> 
             <img alt='boat background image' src={boatImg} /> 
@@ -85,7 +121,7 @@ const Home = props => {
               flexBasis: 500,
               background: '#F8F8F8',
               margin: '10px 0',
-              padding: 10,
+              padding: '20px 10px',
             }} >
               <h4>Freelancer/Small Agency</h4>
               <div style={{
@@ -100,27 +136,14 @@ const Home = props => {
                 <div>THIS IS A FEATURE LINE</div>
               </div>
               <div style={{marginTop: 20}} >
-                <button
-                style={{
-                  textDecoration: 'none',
-                  background: 'Transparent',
-                  color: BASERED,
-                  borderRadius: 5,
-                  padding: '4px 14px 4px 14px',
-                  border: `1.5px solid ${BASERED}`,
-                  listStyleType: 'none',
-                  fontFamily: "'Raleway', sans-serif",
-                  fontWeight: 200,
-                  fontSize: '1em',
-                }}
-                > 7-Day Free Trial </button>
+                <OutlinedButton color={BASEGREEN} > 7-Day Free Trial </OutlinedButton>
               </div>
             </div>
             <div style={{
               flexBasis: 500,
               background: '#F8F8F8',
               margin: '10px 0',
-              padding: 10,
+              padding: '20px 10px',
             }} >
               <h4>Mid-size/Large Agency</h4>
               <div style={{
@@ -135,8 +158,12 @@ const Home = props => {
                 <div>THIS IS A FEATURE LINE</div>
               </div>
               <div style={{marginTop: 20, display: 'flex', flexDirection: 'row', justifyContent: 'center'}} >
-                <OutlineButton color={BASEGREEN} style={{margin: '0 5px'}} >Learn More</OutlineButton>
-                <OutlineButton color={BASERED} style={{margin: '0 5px'}} >Book a Demo</OutlineButton>
+                <div style={{margin: '0 5px'}} >
+                  <OutlinedButton color={BASEGREEN} > Learn More </OutlinedButton>
+                </div>
+                <div style={{margin: '0 5px'}} >
+                  <OutlinedButton color={BASERED} > Book a Demo </OutlinedButton>
+                </div>
               </div>
             </div>
           </div>
@@ -153,9 +180,7 @@ const Home = props => {
                 <div className='feature-description'>
                   <p> Effortlessly send personalized pitches to anyone on your media lists and monitor your pitch success.</p> 
                 </div> 
-                <div className='feature-learn-more'>
-                  <p> Learn more </p> 
-                </div> 
+                <SolidButton color='#384083'> Learn More </SolidButton>
               </div> 
             </div>
           </div> 
@@ -171,9 +196,7 @@ const Home = props => {
                 <div className='feature-description'> 
                   <p> Centralize and easily manage your media lists on a single platform.  </p> 
                 </div> 
-                <div className='feature-learn-more'>
-                  <p> Learn more </p> 
-                </div> 
+                <SolidButton color='#384083'> Learn More </SolidButton>
               </div> 
             </div>
           </div> 
@@ -189,9 +212,7 @@ const Home = props => {
                 <div className='feature-description'>
                   <p> Painlessly stay up to date with what contacts on your media lists are posting on social media. </p> 
                 </div> 
-                <div className='feature-learn-more'>
-                  <p> Learn more </p> 
-                </div> 
+                <SolidButton color='#384083'> Learn More </SolidButton>
               </div> 
             </div>
           </div> 
@@ -207,9 +228,7 @@ const Home = props => {
                 <div className='feature-description'> 
                   <p> Consolidate your agency’s contacts by sharing and collaborating on media lists. </p> 
                 </div> 
-                <div className='feature-learn-more'>
-                  <p> Learn more </p> 
-                </div> 
+                <SolidButton color='#384083'> Learn More </SolidButton>
               </div> 
             </div>
           </div> 

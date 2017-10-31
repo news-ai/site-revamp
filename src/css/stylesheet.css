@@ -156,8 +156,7 @@ body {
 }
 
 .cloud.smaller {
-/*  margin-right: 400px;
-*/  width: 100px;
+	width: 100px;
   margin-top: 50px;
 }
 
@@ -166,8 +165,8 @@ body {
 }
 
 .cloud.distant {
-	z-index: 1;
-}
+/*	z-index: 1;
+*/}
 
 .cloud {
   -webkit-animation-name: cloud-movement;

@@ -26,8 +26,16 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div id='wrapper'> 
-          <div id='landing' className='grey-font'>
+        <div style={{
+          background: '#384083',
+        }} > 
+          <div style={{
+            display: 'flex',
+            flexFlow: 'column',
+            background: '#384083',
+            fontFamily: '"Raleway", sans-serif',
+            color: '#E2E3DD',
+          }} className='grey-font'>
             <div className='clouds'>
               <svg className='cloud small' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlnsXlink='http://www.w3.org/1999/xlink' x='0px' y='0px' width='762px' height='331px' viewBox='0 0 762 331' enableBackground='new 0 0 762 331' xmlSpace='preserve'>
                 <path fill='#FFFFFF' d='M715.394,228h-16.595c0.79-5.219,1.201-10.562,1.201-16c0-58.542-47.458-106-106-106 c-8.198,0-16.178,0.932-23.841,2.693C548.279,45.434,488.199,0,417.5,0c-84.827,0-154.374,65.401-160.98,148.529 C245.15,143.684,232.639,141,219.5,141c-49.667,0-90.381,38.315-94.204,87H46.607C20.866,228,0,251.058,0,279.5 S20.866,331,46.607,331h668.787C741.133,331,762,307.942,762,279.5S741.133,228,715.394,228z' />
@@ -43,11 +51,12 @@ class App extends Component {
               </svg>
             </div>
 
-            <div className='logo hide-wide'> 
+            <div className='logo hide-wide' style={{zIndex: 2}} > 
               <p> NewsAI </p> 
             </div> 
 
-            <div className='hide-narrow'> 
+            <div className='hide-narrow' style={{zIndex: 2}} > 
+          {/*
               <nav id='scrollnav'> 
                 <ul id='left-scroll'>
                   <li className='left-list logo-3'><Link to='/' style={{textDecoration: 'none'}}> NewsAI </Link></li> 
@@ -60,8 +69,9 @@ class App extends Component {
                   <li className='right-list'> Request a Demo </li> 
                 </ul> 
               </nav> 
-              <nav id='navbar'>   
-                <Link to='/'>
+          */}
+              <nav id='navbar' >   
+                <Link to='/' style={{textDecoration: 'none', userSelect: 'none'}} >
                   <div className='logo-2'> 
                     <p> NewsAI </p> 
                   </div>
@@ -79,7 +89,6 @@ class App extends Component {
                     borderRadius: 5,
                     padding: '4px 14px 4px 14px',
                     border: '1.5px solid #fff',
-                    listStyleType: 'none',
                     fontFamily: '"Raleway", sans-serif',
                     fontWeight: 200,
                     fontSize: '1em',
