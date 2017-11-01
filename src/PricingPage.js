@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import MultiToggle from './MultiToggle';
 import FontIcon from 'material-ui/FontIcon';
 import {LightenDarkenColor} from './utils';
-import {grey500, grey600, grey700, grey800} from 'material-ui/styles/colors';
+import {grey200, grey500, grey600, grey700, grey800} from 'material-ui/styles/colors';
 
 const DEFAULT_BACKGROUND_GREY = '#ECECEC';
 const LIGHTER_BACKGROUND_GREY = '#F8F8F8';
@@ -12,8 +12,14 @@ const GREYFONT = '#E2E3DD';
 const StandardDiv = styled.div.attrs({
   className: props => props.className
 })`
-  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  border-bottom: 2px solid #fff;
 `;
+
+  // border-top: 1px solid red;
 
 const pricingToggleOptions = [
   {displayName: 'Monthly', value: 'monthly'},
@@ -24,7 +30,6 @@ const VerticalBlock = ({title, price, emailsPerDay, emailsSendFrom}) => (
   <div
   style={{
     width: 180,
-    height: 400,
     background: LIGHTER_BACKGROUND_GREY,
     margin: '0 8px',
     padding: '15px 5px',
@@ -34,13 +39,17 @@ const VerticalBlock = ({title, price, emailsPerDay, emailsSendFrom}) => (
     <div className='horizontal-center vertical-center' style={{height: 50}} >
       <span style={{fontWeight: 400, fontSize: '1.1em'}} >{title}</span>
     </div>
-    <StandardDiv><FontIcon className='fa fa-check' color='green' style={{fontSize: '0.9em'}} /></StandardDiv>
-    <StandardDiv><FontIcon className='fa fa-check' color='green' style={{fontSize: '0.9em'}} /></StandardDiv>
+    <StandardDiv><FontIcon className='fa fa-check' color='green' style={styles.featureCheck} /></StandardDiv>
+    <StandardDiv><FontIcon className='fa fa-check' color='green' style={styles.featureCheck} /></StandardDiv>
+    <StandardDiv><FontIcon className='fa fa-check' color='green' style={styles.featureCheck} /></StandardDiv>
+    <StandardDiv><FontIcon className='fa fa-check' color='green' style={styles.featureCheck} /></StandardDiv>
+    <StandardDiv><FontIcon className='fa fa-check' color='green' style={styles.featureCheck} /></StandardDiv>
+    <StandardDiv><FontIcon className='fa fa-check' color='green' style={styles.featureCheck} /></StandardDiv>
     <StandardDiv>
-      <span style={{fontSize: '0.9em', color: grey800}} >{emailsPerDay}</span>
+      <span style={styles.featureDescription} >{emailsPerDay}</span>
     </StandardDiv>
     <StandardDiv>
-      <span style={{fontSize: '0.9em', color: grey800}} >{emailsSendFrom}</span>
+      <span style={styles.featureDescription} >{emailsSendFrom}</span>
     </StandardDiv>
     <StandardDiv>Item 1</StandardDiv>
     <div
@@ -59,6 +68,18 @@ const VerticalBlock = ({title, price, emailsPerDay, emailsSendFrom}) => (
   </div>
   )
 
+const styles = {
+  featureName: {
+    fontSize: '0.8em', color: grey800
+  },
+  featureDescription: {
+    fontSize: '0.9em', color: grey800
+  },
+  featureCheck: {
+    fontSize: '0.9em'
+  },
+};
+
 class PricingPage extends Component {
   constructor(props) {
     super(props);
@@ -75,8 +96,8 @@ class PricingPage extends Component {
         padding: '50px 0',
         background: DEFAULT_BACKGROUND_GREY,
       }} >
-        <div className='horizontal-center' style={{margin: '20px 0'}} >
-          <span style={{color: grey800, fontSize: '1.3em'}} >Simple and Flexible Pricing</span>
+        <div className='horizontal-center' style={{margin: '15px 0'}} >
+          <span style={{color: grey800, fontSize: '2em'}} >Simple and Flexible Pricing</span>
         </div>
         <div className='horizontal-center' style={{margin: '20px 0'}} >
           <MultiToggle
@@ -92,23 +113,34 @@ class PricingPage extends Component {
           <div style={{
             background: LightenDarkenColor(DEFAULT_BACKGROUND_GREY, 15),
             width: 250,
-            height: 200,
             margin: '50px 8px 0 8px',
             padding: '15px 5px',
             display: 'flex',
             flexDirection: 'column',
           }} >
             <StandardDiv>
-              <span style={{fontSize: '0.8em', color: grey800}} >Unlimited Contacts / Lists</span>
+              <span style={styles.featureName} >Unlimited Contacts / Media Lists</span>
             </StandardDiv>
             <StandardDiv>
-              <span style={{fontSize: '0.8em', color: grey800}} >Email / Performance Tracking</span>
+              <span style={styles.featureName} >Email / Performance Tracking</span>
             </StandardDiv>
             <StandardDiv>
-              <span style={{fontSize: '0.8em', color: grey800}} >Emails Send per Day</span>
+              <span style={styles.featureName} >Highly Customizable Mail Merge</span>
             </StandardDiv>
             <StandardDiv>
-              <span style={{fontSize: '0.8em', color: grey800}} >Email Addresses to Send From</span>
+              <span style={styles.featureName} >Unlimited Templates</span>
+            </StandardDiv>
+            <StandardDiv>
+              <span style={styles.featureName} >Search Your Contacts</span>
+            </StandardDiv>
+            <StandardDiv>
+              <span style={styles.featureName} >Simple, Effective Tagging</span>
+            </StandardDiv>
+            <StandardDiv>
+              <span style={styles.featureName} >Emails Send per Day</span>
+            </StandardDiv>
+            <StandardDiv>
+              <span style={styles.featureName} >Email Addresses to Send From</span>
             </StandardDiv>
             <StandardDiv>Item 1</StandardDiv>
           </div>
@@ -120,21 +152,21 @@ class PricingPage extends Component {
           />
           <VerticalBlock
           title='Tier 1'
-          price={discountToggle === 'monthly' ? '15.99' : '18.99'}
-          emailsPerDay='100'
-          emailsSendFrom='1'
+          price={discountToggle === 'monthly' ? '28.99' : '34.99'}
+          emailsPerDay='400'
+          emailsSendFrom='2'
           />
           <VerticalBlock
           title='Tier 2'
-          price={discountToggle === 'monthly' ? '15.99' : '18.99'}
-          emailsPerDay='100'
-          emailsSendFrom='1'
+          price={discountToggle === 'monthly' ? '34.99' : '41.99'}
+          emailsPerDay='1000'
+          emailsSendFrom='5'
           />
           <VerticalBlock
           title='Tier 3'
-          price={discountToggle === 'monthly' ? '15.99' : '18.99'}
-          emailsPerDay='100'
-          emailsSendFrom='1'
+          price={discountToggle === 'monthly' ? '43.99' : '52.99'}
+          emailsPerDay='2500'
+          emailsSendFrom='10'
           />
         </div>
       </div>
