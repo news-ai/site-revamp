@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import MultiToggle from './MultiToggle';
 import {LightenDarkenColor} from './utils';
 
 const DEFAULT_BACKGROUND_GREY = '#ECECEC';
@@ -10,6 +11,11 @@ const StandardDiv = styled.div.attrs({
 })`
   padding: 5px 10px;
 `;
+
+const pricingToggleOptions = [
+  {displayName: 'Monthly', value: 'monthly'},
+  {displayName: 'Annually', value: 'annually'},
+];
 
 const VerticalBlock = ({title}) => (
   <div
@@ -47,11 +53,11 @@ class PricingPage extends Component {
         background: DEFAULT_BACKGROUND_GREY,
       }} >
         <div className='horizontal-center'>
-          <div
-          style={{margin: 10, padding: 10, border: '1px solid grey'}}
-          onClick={() => this.setState({discountToggle: this.state.discountToggle === 'monthly' ? 'yearly' : 'monthly'})}>
-          {this.state.discountToggle}
-          </div>
+          <MultiToggle
+          options={pricingToggleOptions}
+          selectedOption={this.state.discountToggle}
+          onSelectOption={value => this.setState({discountToggle: value})}
+          />
         </div>
         <div className='horizontal-center'>
           <div style={{
