@@ -6,7 +6,7 @@
 .toggle-wrapper label {
   padding: 0.3em;
   font-size: 14px;
-  display: block;
+  display: inline;
 }
 
 .toggleContainer {
@@ -22,12 +22,13 @@
   position: relative;
   z-index: 1;
   text-align: center;
-  height: 25px;
-  line-height: 25px;
+  height: 30px;
+  line-height: 30px;
   cursor: pointer;
   transition: all 0.5s ease-in-out;
   color: #807b77;
   font-size: 0.8em;
+  min-width: 100px;
 }
 
 .toggleContainer .toggleOption.selected {

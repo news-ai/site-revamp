@@ -12,7 +12,7 @@ const MultiToggle = ({ selectedOption, options, onSelectOption, className, label
 
   const columnWidth = numOptions ? (100 / numOptions) : numOptions;
 
-  const isSelectedOption = option => option.value == selectedOption;
+  const isSelectedOption = option => option.value === selectedOption;
 
   const getSelectedIndex = () => {
     const indexFound = options.findIndex((option) => isSelectedOption(option));

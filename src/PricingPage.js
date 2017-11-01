@@ -45,14 +45,13 @@ class PricingPage extends Component {
   }
 
   render() {
-    console.log(LightenDarkenColor(DEFAULT_BACKGROUND_GREY, 15));
     return (
       <div style={{
         position: 'relative',
         padding: '50px 0',
         background: DEFAULT_BACKGROUND_GREY,
       }} >
-        <div className='horizontal-center'>
+        <div className='horizontal-center' style={{margin: '20px 0'}} >
           <MultiToggle
           options={pricingToggleOptions}
           selectedOption={this.state.discountToggle}
