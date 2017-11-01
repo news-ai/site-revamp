@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import MultiToggle from './MultiToggle';
+import FontIcon from 'material-ui/FontIcon';
 import {LightenDarkenColor} from './utils';
-import {grey600, grey700, grey800} from 'material-ui/styles/colors';
+import {grey500, grey600, grey700, grey800} from 'material-ui/styles/colors';
 
 const DEFAULT_BACKGROUND_GREY = '#ECECEC';
 const LIGHTER_BACKGROUND_GREY = '#F8F8F8';
@@ -19,7 +20,7 @@ const pricingToggleOptions = [
   {displayName: 'Annually', value: 'annually'},
 ];
 
-const VerticalBlock = ({title, price}) => (
+const VerticalBlock = ({title, price, emailsPerDay, emailsSendFrom}) => (
   <div
   style={{
     width: 180,
@@ -33,9 +34,13 @@ const VerticalBlock = ({title, price}) => (
     <div className='horizontal-center vertical-center' style={{height: 50}} >
       <span style={{fontWeight: 400, fontSize: '1.1em'}} >{title}</span>
     </div>
-    <StandardDiv>Item 1</StandardDiv>
-    <StandardDiv>Item 1</StandardDiv>
-    <StandardDiv>Item 1</StandardDiv>
+    <StandardDiv><FontIcon className='fa fa-check' color='green' style={{fontSize: '0.9em'}} /></StandardDiv>
+    <StandardDiv>
+      <span style={{fontSize: '0.9em', color: grey800}} >{emailsPerDay}</span>
+    </StandardDiv>
+    <StandardDiv>
+      <span style={{fontSize: '0.9em', color: grey800}} >{emailsSendFrom}</span>
+    </StandardDiv>
     <StandardDiv>Item 1</StandardDiv>
     <div
     className='vertical-center horizontal-center'
@@ -44,7 +49,7 @@ const VerticalBlock = ({title, price}) => (
       marginTop: 'auto',
       padding: '10px 0',
       background: '#fff',
-      border: `1px solid ${grey700}`,
+      border: `1px solid ${grey500}`,
     }} >
       <span style={{color: grey700}} >$</span>
       <span style={{fontSize: '1.6em', color: grey700}} >{price}</span>
@@ -82,22 +87,48 @@ class PricingPage extends Component {
         <div className='horizontal-center'>
           <div style={{
             background: LightenDarkenColor(DEFAULT_BACKGROUND_GREY, 15),
-            width: 180,
+            width: 250,
             height: 200,
             margin: '50px 8px 0 8px',
             padding: '15px 5px',
             display: 'flex',
             flexDirection: 'column',
           }} >
-            <StandardDiv>Item 1</StandardDiv>
-            <StandardDiv>Item 1</StandardDiv>
-            <StandardDiv>Item 1</StandardDiv>
+            <StandardDiv>
+              <span style={{fontSize: '0.8em', color: grey800}} >Email / Performance Tracking</span>
+            </StandardDiv>
+            <StandardDiv>
+              <span style={{fontSize: '0.8em', color: grey800}} >Emails Send per Day</span>
+            </StandardDiv>
+            <StandardDiv>
+              <span style={{fontSize: '0.8em', color: grey800}} >Email Addresses to Send From</span>
+            </StandardDiv>
             <StandardDiv>Item 1</StandardDiv>
           </div>
-          <VerticalBlock title='Tier 0' price={discountToggle === 'monthly' ? '15.99' : '18.99'} />
-          <VerticalBlock title='Tier 1' price={discountToggle === 'monthly' ? '15.99' : '18.99'} />
-          <VerticalBlock title='Tier 2' price={discountToggle === 'monthly' ? '15.99' : '18.99'} />
-          <VerticalBlock title='Tier 3' price={discountToggle === 'monthly' ? '15.99' : '18.99'} />
+          <VerticalBlock
+          title='Tier 0'
+          price={discountToggle === 'monthly' ? '15.99' : '18.99'}
+          emailsPerDay='100'
+          emailsSendFrom='1'
+          />
+          <VerticalBlock
+          title='Tier 1'
+          price={discountToggle === 'monthly' ? '15.99' : '18.99'}
+          emailsPerDay='100'
+          emailsSendFrom='1'
+          />
+          <VerticalBlock
+          title='Tier 2'
+          price={discountToggle === 'monthly' ? '15.99' : '18.99'}
+          emailsPerDay='100'
+          emailsSendFrom='1'
+          />
+          <VerticalBlock
+          title='Tier 3'
+          price={discountToggle === 'monthly' ? '15.99' : '18.99'}
+          emailsPerDay='100'
+          emailsSendFrom='1'
+          />
         </div>
       </div>
       );
