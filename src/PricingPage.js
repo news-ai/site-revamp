@@ -35,6 +35,7 @@ const VerticalBlock = ({title, price, emailsPerDay, emailsSendFrom}) => (
       <span style={{fontWeight: 400, fontSize: '1.1em'}} >{title}</span>
     </div>
     <StandardDiv><FontIcon className='fa fa-check' color='green' style={{fontSize: '0.9em'}} /></StandardDiv>
+    <StandardDiv><FontIcon className='fa fa-check' color='green' style={{fontSize: '0.9em'}} /></StandardDiv>
     <StandardDiv>
       <span style={{fontSize: '0.9em', color: grey800}} >{emailsPerDay}</span>
     </StandardDiv>
@@ -84,6 +85,9 @@ class PricingPage extends Component {
           onSelectOption={value => this.setState({discountToggle: value})}
           />
         </div>
+        <div className='horizontal-center' style={{marginBottom: 20}} >
+          <span style={{fontSize: '0.8em'}}>20% off when you sign up annually</span>
+        </div>
         <div className='horizontal-center'>
           <div style={{
             background: LightenDarkenColor(DEFAULT_BACKGROUND_GREY, 15),
@@ -94,6 +98,9 @@ class PricingPage extends Component {
             display: 'flex',
             flexDirection: 'column',
           }} >
+            <StandardDiv>
+              <span style={{fontSize: '0.8em', color: grey800}} >Unlimited Contacts / Lists</span>
+            </StandardDiv>
             <StandardDiv>
               <span style={{fontSize: '0.8em', color: grey800}} >Email / Performance Tracking</span>
             </StandardDiv>
