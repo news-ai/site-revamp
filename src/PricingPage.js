@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import MultiToggle from './MultiToggle';
 import FontIcon from 'material-ui/FontIcon';
 import {LightenDarkenColor} from './utils';
-import {green400, grey200, grey500, grey600, grey700, grey800} from 'material-ui/styles/colors';
+import {green400, grey200, grey400, grey500, grey600, grey700, grey800} from 'material-ui/styles/colors';
 import SolidButton from './SolidButton';
 
 const DEFAULT_BACKGROUND_GREY = '#ECECEC';
@@ -47,7 +47,7 @@ const VerticalBlock = ({title, price, emailsPerDay, emailsSendFrom}) => (
       marginTop: 'auto',
       padding: '10px 0',
       background: '#fff',
-      border: `1px solid ${grey500}`,
+      border: `1px solid ${grey400}`,
     }} >
       <span style={{color: grey700}} >$</span>
       <span style={{fontSize: '1.6em', color: grey700}} >{price}</span>
@@ -172,10 +172,18 @@ class PricingPage extends Component {
           />
         </div>
         <div className='horizontal-center' style={{margin: '60px 0 0 20px'}} >
-          <span style={{fontSize: '2em', display: 'block'}}>Do you have a large team?</span>
+          <span style={{fontSize: '2em', display: 'block'}}>Have a large team?</span>
+        </div>
+        <div className='horizontal-center' style={{margin: '15px 0 0 0'}} >
+          <span style={{fontSize: '1.4em', display: 'block'}}>Our Agency/Enterprise tier might be better suited for your organization.</span>
         </div>
         <div className='horizontal-center' >
-          <span style={{fontSize: '1.4em', display: 'block'}}>Our Agency/Enterprise tier might be better suited for your organization.</span>
+          <ul>
+            <li>Dedicated onboarding sessions</li>
+            <li>Assigned Account Rep</li>
+            <li>Customized Product that suits your org's needs</li>
+            <li>and more</li>
+          </ul>
         </div>
         <div className='horizontal-center' style={{margin: '20px 0'}} >
           <SolidButton>Book a Demo</SolidButton>

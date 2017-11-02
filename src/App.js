@@ -77,7 +77,7 @@ class App extends Component {
                   </div>
                 </Link>
                 <ul className='right-nav'> 
-                  <Link to='/products' style={{textDecoration: 'none', color: 'white'}}><li className='link-nav'> Products </li></Link>
+                  <Link to='/products' style={{textDecoration: 'none', color: 'white'}}><li className='link-nav'> Product </li></Link>
                   <Link to='/pricing' style={{textDecoration: 'none', color: 'white'}}><li className='link-nav'> Pricing </li></Link>
                   <li className='link-nav'><a href='https://www.newsai.co/blog/' style={{textDecoration: 'none', color:'white'}}> Blog </a></li> 
                   <a

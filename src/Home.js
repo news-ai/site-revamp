@@ -16,6 +16,7 @@ import foxImg from './images/fox-mobile.png';
 import snailImg from './images/snail-mobile.png';
 import collaborateImg from './images/collaborate-mobile.png';
 import prDailyLogo from './images/pr_daily.png';
+import macbookMockup from './images/mockup_homepage_on_macbook.png';
 
 const BASEBLUE = '#384083';
 const BASERED = '#ff0000';
@@ -30,12 +31,16 @@ const RoundedInput = styled.input`
   padding: 0.5em; 
 `;
 
+const v1LandingContent = {
+  subtitle: 'The Best CRM and Emailing Tool for PR',
+  subsubtitle: 'Easily Manage Your List Building and Email Distribution'
+};
 
-const Landing = props => (
+
+const Landing = ({content}) => (
     <div style={{
       display: 'flex',
       flexFlow: 'column',
-      // background: '#384083',
       fontFamily: '"Raleway", sans-serif',
       color: '#E2E3DD',
       position: 'relative'
@@ -49,12 +54,14 @@ const Landing = props => (
       </div> 
 
       <div className='flex-center'> 
-        <div id='subtitle'> Send personalized pitches with less work </div> 
+        <div id='subtitle'> {content.subtitle} </div> 
       </div>
 
       <div className='flex-center'> 
-        <div id='subsubtitle'> A list building and email distribution tool for PR professionals </div> 
+        <div id='subsubtitle'> {content.subsubtitle} </div> 
       </div>
+
+    {/*
 
       <div style={{
         display: 'flex',
@@ -74,6 +81,20 @@ const Landing = props => (
           </div>
         </form>
       </div>
+    */}
+      <div style={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        marginTop: 30,
+      }} >
+        <div style={{
+          border: '3px solid red',
+          padding: 5
+        }}>
+        POP VIDEO HERE - WATCH HOW IT WORKS
+        </div>
+      </div>
 
       <div id='airplane-2'> 
         <img alt='second airplane background image' src={airplane2Img} /> 
@@ -84,14 +105,18 @@ const Landing = props => (
 const Home = props => {
   return (
       <div>
-        <Landing /> 
+        <Landing content={v1LandingContent} /> 
         <div id='content'> 
           <div id='boat'> 
             <img alt='boat background image' src={boatImg} /> 
           </div> 
-          <div className='flex-center'> 
+          <div className='flex-center' style={{marginBottom: 30}} > 
             <div id='tagline'> Streamline your workflow with tools made for public relations professionals.</div> 
           </div> 
+
+          <div className='horizontal-center'>
+            <img height={500} src={macbookMockup} />
+          </div>
 
           <div style={{
             display: 'flex',
@@ -241,7 +266,7 @@ const Home = props => {
                 <p> Request a Live Demo </p> 
               </div> 
               <div className='feature-description-2'> 
-                <p> Get a one on one product walkthrough with us !</p> 
+                <p> Get a one-on-one product walkthrough with us !</p> 
               </div> 
               <div className='demo-2'>
                 <input type='text' name='email' placeholder='Email Address' />
@@ -254,6 +279,17 @@ const Home = props => {
               </div> 
             </div> 
           </div> 
+
+          <div className='horizontal-center'>
+            <div>
+              <div style={{margin: '15px 0'}} >
+                <span style={{fontSize: '1.4em'}} >Featured Blog Post</span>
+              </div>
+              <div className='vertical-center horizontal-center' style={{width: 700, height: 300, border: '4px solid red'}} >
+                IMG CONTENTTTTT AND WORD
+              </div>
+            </div>
+          </div>
 
 
           <div className='flex-center' style={{margin: '30px 0'}} > 
