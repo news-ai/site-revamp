@@ -3,6 +3,8 @@ import Slider from './Slider';
 import styled from 'styled-components';
 import {Link} from 'react-router-dom';
 import Dialog from 'material-ui/Dialog';
+import SolidButton from './SolidButton';
+import OutlinedButton from './OutlinedButton';
 import {LightenDarkenColor} from './utils';
 
 import airplane1Img from './images/airplane-2.png';
@@ -28,39 +30,6 @@ const RoundedInput = styled.input`
   padding: 0.5em; 
 `;
 
-const OutlinedButton = styled.div`
-  display: inline-block;
-  text-decoration: none;
-  border-radius: 5px;
-  padding: 4px 14px 4px 14px;
-  border: 1.5px solid ${props => props.color ? props.color : 'black'};
-  color: ${props => props.color || '#000'};
-  font-family: "Raleway", sans-serif;
-  font-weight: 400;
-  font-size: 1em;
-  &:hover {
-    border: 1.5px solid ${props => LightenDarkenColor(props.color || '#000', -40)};
-    color: ${props => LightenDarkenColor(props.color || '#000', -40)};
-    cursor: pointer;
-  }
-`;
-
-const SolidButton = styled.div`
-  display: inline-block;
-  text-decoration: none;
-  transition: background 0.5s ease;
-  font-weight: 400;
-  color: #FFFFFF;
-  background: ${props => props.color || BASERED};
-  border-radius: 6px;
-  padding: 0.7em 1em;
-  font-size: 1em;
-
-  &:hover {
-    background: ${props => LightenDarkenColor(props.color || BASERED, -30)};
-    cursor: pointer;
-  }
-`;
 
 const Landing = props => (
     <div style={{
