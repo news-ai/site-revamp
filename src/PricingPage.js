@@ -3,7 +3,8 @@ import styled from 'styled-components';
 import MultiToggle from './MultiToggle';
 import FontIcon from 'material-ui/FontIcon';
 import {LightenDarkenColor} from './utils';
-import {grey200, grey500, grey600, grey700, grey800} from 'material-ui/styles/colors';
+import {green400, grey200, grey500, grey600, grey700, grey800} from 'material-ui/styles/colors';
+import SolidButton from './SolidButton';
 
 const DEFAULT_BACKGROUND_GREY = '#ECECEC';
 const LIGHTER_BACKGROUND_GREY = '#F8F8F8';
@@ -39,19 +40,6 @@ const VerticalBlock = ({title, price, emailsPerDay, emailsSendFrom}) => (
     <div className='horizontal-center vertical-center' style={{height: 50}} >
       <span style={{fontWeight: 400, fontSize: '1.1em'}} >{title}</span>
     </div>
-    <StandardDiv><FontIcon className='fa fa-check' color='green' style={styles.featureCheck} /></StandardDiv>
-    <StandardDiv><FontIcon className='fa fa-check' color='green' style={styles.featureCheck} /></StandardDiv>
-    <StandardDiv><FontIcon className='fa fa-check' color='green' style={styles.featureCheck} /></StandardDiv>
-    <StandardDiv><FontIcon className='fa fa-check' color='green' style={styles.featureCheck} /></StandardDiv>
-    <StandardDiv><FontIcon className='fa fa-check' color='green' style={styles.featureCheck} /></StandardDiv>
-    <StandardDiv><FontIcon className='fa fa-check' color='green' style={styles.featureCheck} /></StandardDiv>
-    <StandardDiv>
-      <span style={styles.featureDescription} >{emailsPerDay}</span>
-    </StandardDiv>
-    <StandardDiv>
-      <span style={styles.featureDescription} >{emailsSendFrom}</span>
-    </StandardDiv>
-    <StandardDiv>Item 1</StandardDiv>
     <div
     className='vertical-center horizontal-center'
     style={{
@@ -65,6 +53,21 @@ const VerticalBlock = ({title, price, emailsPerDay, emailsSendFrom}) => (
       <span style={{fontSize: '1.6em', color: grey700}} >{price}</span>
       <span style={{fontSize: '0.9em', color: grey700}} > /month</span>
     </div>
+    <div className='horizontal-center'>
+      <SolidButton color={green400} >Try It Free</SolidButton>
+    </div>
+    <StandardDiv><FontIcon className='fa fa-check' color='green' style={styles.featureCheck} /></StandardDiv>
+    <StandardDiv><FontIcon className='fa fa-check' color='green' style={styles.featureCheck} /></StandardDiv>
+    <StandardDiv><FontIcon className='fa fa-check' color='green' style={styles.featureCheck} /></StandardDiv>
+    <StandardDiv><FontIcon className='fa fa-check' color='green' style={styles.featureCheck} /></StandardDiv>
+    <StandardDiv><FontIcon className='fa fa-check' color='green' style={styles.featureCheck} /></StandardDiv>
+    <StandardDiv><FontIcon className='fa fa-check' color='green' style={styles.featureCheck} /></StandardDiv>
+    <StandardDiv>
+      <span style={styles.featureDescription} >{emailsPerDay}</span>
+    </StandardDiv>
+    <StandardDiv>
+      <span style={styles.featureDescription} >{emailsSendFrom}</span>
+    </StandardDiv>
   </div>
   )
 
@@ -113,7 +116,7 @@ class PricingPage extends Component {
           <div style={{
             background: LightenDarkenColor(DEFAULT_BACKGROUND_GREY, 15),
             width: 250,
-            margin: '50px 8px 0 8px',
+            margin: '164px 8px 0 8px',
             padding: '15px 5px',
             display: 'flex',
             flexDirection: 'column',
@@ -142,7 +145,6 @@ class PricingPage extends Component {
             <StandardDiv>
               <span style={styles.featureName} >Email Addresses to Send From</span>
             </StandardDiv>
-            <StandardDiv>Item 1</StandardDiv>
           </div>
           <VerticalBlock
           title='Tier 0'
@@ -168,6 +170,15 @@ class PricingPage extends Component {
           emailsPerDay='2500'
           emailsSendFrom='10'
           />
+        </div>
+        <div className='horizontal-center' style={{margin: '60px 0 0 20px'}} >
+          <span style={{fontSize: '2em', display: 'block'}}>Do you have a large team?</span>
+        </div>
+        <div className='horizontal-center' >
+          <span style={{fontSize: '1.4em', display: 'block'}}>Our Agency/Enterprise tier might be better suited for your organization.</span>
+        </div>
+        <div className='horizontal-center' style={{margin: '20px 0'}} >
+          <SolidButton>Book a Demo</SolidButton>
         </div>
       </div>
       );
