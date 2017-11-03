@@ -148,16 +148,17 @@ const FeatureCard = ({imgAlt, imgSrc, headline, description}) => (
   </div> 
   );
 
+
 const HoverCard = styled.div`
-  width: 500px;
+  flex-basis: 600px;
   background: #F8F8F8;
   margin: 10px 0;
   padding: 20px 10px;
-  box-shadow: none;
-  transition: box-shadow 0.3s;
+  box-shadow: 0 3px 5px 0 rgba(0,0,0,0.08);
+  transition: box-shadow 0.3s ease-in-out;
 
-  & :hover {
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  &:hover {
+    box-shadow: 0 5px 15px 2px rgba(0, 0, 0, 0.1);
   }
 `;
 
@@ -211,12 +212,7 @@ const Home = props => {
             flexFlow: 'row wrap',
             marginTop: 20,
           }} >
-            <div className='box-shadow hoverCard' style={{
-              width: 500,
-              background: '#F8F8F8',
-              margin: '10px 0',
-              padding: '20px 10px',
-            }}>
+            <HoverCard>
               <div>
                 <span>Freelancer/Small Agency</span>
               </div>
@@ -243,25 +239,21 @@ const Home = props => {
                   </a>
                 </div>
               </div>
-            </div>
+            </HoverCard>
 
-            <div style={{
-              flexBasis: 500,
-              background: '#F8F8F8',
-              margin: '10px 0',
-              padding: '20px 10px',
-            }} >
+            <HoverCard>
               <h4>Mid-size/Large Agency</h4>
               <div style={{
                 display: 'flex',
                 flexDirection: 'column',
                 padding: 3,
               }} >
-                <div>THIS IS A FEATURE LINE</div>
-                <div>THIS IS A FEATURE LINE</div>
-                <div>THIS IS A FEATURE LINE</div>
-                <div>THIS IS A FEATURE LINE</div>
-                <div>THIS IS A FEATURE LINE</div>
+                <div>...everything in Freelancer tier</div>
+                <div>- Dedicated Account Support</div>
+                <div>- Team Collaborative Editing Feature</div>
+                <div>- Advanced Search Features</div>
+                <div>- Admin Control of Team Member Level of Access</div>
+                <div>- and more</div>
               </div>
               <div style={{marginTop: 20, display: 'flex', flexDirection: 'row', justifyContent: 'center'}} >
                 <div style={{margin: '0 5px'}} >
@@ -271,7 +263,7 @@ const Home = props => {
                   <OutlinedButton color={BASERED} > Book a Demo </OutlinedButton>
                 </div>
               </div>
-            </div>
+            </HoverCard>
           </div>
 
          
@@ -304,7 +296,23 @@ const Home = props => {
                 <p> Request a Demo</p>
               </div> 
             </div> 
-          </div> 
+          </div>
+
+          <div className='horizontal-center' style={{margin: '40px 0'}} >
+            <div>
+              <div style={{marginBottom: 10}} >
+                <div >
+                  <span style={{fontSize: '1.6em', fontWeight: 500}} >Not quite ready to dip your toe in but want to stay up-to-date on what's new with us?</span>
+                </div>
+                <div >
+                  <span>Subscribe to Our Blog</span>
+                </div>
+              </div>
+              <div>
+                <RoundedInput placeholder='email' />
+              </div>
+            </div>
+          </div>
 
           <div className='horizontal-center' style={{margin: '40px 0'}} >
             <div>
