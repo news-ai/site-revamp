@@ -113,11 +113,13 @@ const Landing = ({content}) => (
         justifyContent: 'center',
         marginTop: 30,
       }} >
-        <div style={{
-          border: '3px solid red',
-          padding: 5
+        <div className='vertical-center' style={{
+          border: `3px solid ${BASERED}`,
+          borderRadius: '0.3em',
+          padding: '5px 12px'
         }}>
-        POP VIDEO HERE - WATCH HOW IT WORKS
+          <span style={{marginRight: 10, fontSize: '0.8em', fontWeight: 600}} >WATCH HOW IT WORKS</span>
+          <FontIcon className='fa fa-play-circle' color='#fff' />
         </div>
       </div>
 
@@ -147,10 +149,11 @@ const FeatureCard = ({imgAlt, imgSrc, headline, description}) => (
   );
 
 const HoverCard = styled.div`
-  flex-basis: 500px;
+  width: 500px;
   background: #F8F8F8;
   margin: 10px 0;
   padding: 20px 10px;
+  box-shadow: none;
   transition: box-shadow 0.3s;
 
   & :hover {
@@ -206,9 +209,14 @@ const Home = props => {
             display: 'flex',
             justifyContent: 'space-around',
             flexFlow: 'row wrap',
-            marginTop: 20
+            marginTop: 20,
           }} >
-            <HoverCard>
+            <div className='box-shadow hoverCard' style={{
+              width: 500,
+              background: '#F8F8F8',
+              margin: '10px 0',
+              padding: '20px 10px',
+            }}>
               <div>
                 <span>Freelancer/Small Agency</span>
               </div>
@@ -235,7 +243,7 @@ const Home = props => {
                   </a>
                 </div>
               </div>
-            </HoverCard>
+            </div>
 
             <div style={{
               flexBasis: 500,
