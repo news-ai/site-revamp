@@ -37,6 +37,31 @@ const v1LandingContent = {
 };
 
 
+const content = {
+  features: [
+    {
+      name: 'Organize Your Lists',
+      tagline: 'Got duplicates among many media lists?',
+      blurb: 'Easy upload, tagging, and advanced search through your many lists'
+    },
+    {
+      name: 'Email An Entire List and Smart Mail Merge',
+      tagline: 'Got duplicates among many media lists?',
+      blurb: 'Easy upload, tagging, and advanced search through your many lists'
+    },
+    {
+      name: 'Email Tracking',
+      tagline: 'Got duplicates among many media lists?',
+      blurb: 'Easy upload, tagging, and advanced search through your many lists'
+    },
+    {
+      name: 'Build List from Anywhere',
+      tagline: 'Constantly Adding New Contacts to Lists?',
+      blurb: 'Do it right on the page as you are researching the contact through our convenient Chrome extension'
+    },
+  ],
+};
+
 const Landing = ({content}) => (
     <div style={{
       display: 'flex',
@@ -115,75 +140,10 @@ const Home = props => {
           </div> 
 
           <div className='horizontal-center'>
-            <img height={500} src={macbookMockup} />
+            <img height={550} src={macbookMockup} />
           </div>
 
-          <div style={{
-            display: 'flex',
-            justifyContent: 'space-around',
-            flexFlow: 'row wrap',
-            marginTop: 20
-          }} >
-            <div style={{
-              flexBasis: 500,
-              background: '#F8F8F8',
-              margin: '10px 0',
-              padding: '20px 10px',
-            }} >
-              <h4>Freelancer/Small Agency</h4>
-              <div style={{
-                display: 'flex',
-                flexDirection: 'column',
-                padding: 3,
-              }} >
-                <div>THIS IS A FEATURE LINE</div>
-                <div>THIS IS A FEATURE LINE</div>
-                <div>THIS IS A FEATURE LINE</div>
-                <div>THIS IS A FEATURE LINE</div>
-                <div>THIS IS A FEATURE LINE</div>
-              </div>
-              <div style={{marginTop: 20, display: 'flex', flexDirection: 'row', justifyContent: 'center'}} >
-                <div style={{margin: '0 5px'}} >
-                  <Link to='/products'>
-                    <OutlinedButton color={BASEGREEN} > Learn More </OutlinedButton>
-                  </Link>
-                </div>
-                <div style={{margin: '0 5px'}} >
-                  <a href='https://tabulae.newsai.co' style={{textDecoration: 'none'}} >
-                    <OutlinedButton color={BASERED} > 7-Day Free Trial </OutlinedButton>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div style={{
-              flexBasis: 500,
-              background: '#F8F8F8',
-              margin: '10px 0',
-              padding: '20px 10px',
-            }} >
-              <h4>Mid-size/Large Agency</h4>
-              <div style={{
-                display: 'flex',
-                flexDirection: 'column',
-                padding: 3,
-              }} >
-                <div>THIS IS A FEATURE LINE</div>
-                <div>THIS IS A FEATURE LINE</div>
-                <div>THIS IS A FEATURE LINE</div>
-                <div>THIS IS A FEATURE LINE</div>
-                <div>THIS IS A FEATURE LINE</div>
-              </div>
-              <div style={{marginTop: 20, display: 'flex', flexDirection: 'row', justifyContent: 'center'}} >
-                <div style={{margin: '0 5px'}} >
-                  <OutlinedButton color={BASEGREEN} > Learn More </OutlinedButton>
-                </div>
-                <div style={{margin: '0 5px'}} >
-                  <OutlinedButton color={BASERED} > Book a Demo </OutlinedButton>
-                </div>
-              </div>
-            </div>
-          </div>
-
+        
           <div className='flex-center'> 
             <div className='feature'> 
               <div className='feature-image'>
@@ -248,6 +208,77 @@ const Home = props => {
               </div> 
             </div>
           </div> 
+
+
+          <div style={{
+            display: 'flex',
+            justifyContent: 'space-around',
+            flexFlow: 'row wrap',
+            marginTop: 20
+          }} >
+            <div style={{
+              flexBasis: 500,
+              background: '#F8F8F8',
+              margin: '10px 0',
+              padding: '20px 10px',
+            }} >
+              <div>
+                <span>Freelancer/Small Agency</span>
+              </div>
+              <div style={{
+                display: 'flex',
+                flexDirection: 'column',
+                padding: 3,
+              }} >
+                <div>THIS IS A FEATURE LINE</div>
+                <div>THIS IS A FEATURE LINE</div>
+                <div>THIS IS A FEATURE LINE</div>
+                <div>THIS IS A FEATURE LINE</div>
+                <div>THIS IS A FEATURE LINE</div>
+              </div>
+              <div style={{marginTop: 20, display: 'flex', flexDirection: 'row', justifyContent: 'center'}} >
+                <div style={{margin: '0 5px'}} >
+                  <Link to='/products'>
+                    <OutlinedButton color={BASEGREEN} > Learn More </OutlinedButton>
+                  </Link>
+                </div>
+                <div style={{margin: '0 5px'}} >
+                  <a href='https://tabulae.newsai.co' style={{textDecoration: 'none'}} >
+                    <OutlinedButton color={BASERED} > Try it Now </OutlinedButton>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div style={{
+              flexBasis: 500,
+              background: '#F8F8F8',
+              margin: '10px 0',
+              padding: '20px 10px',
+            }} >
+              <h4>Mid-size/Large Agency</h4>
+              <div style={{
+                display: 'flex',
+                flexDirection: 'column',
+                padding: 3,
+              }} >
+                <div>THIS IS A FEATURE LINE</div>
+                <div>THIS IS A FEATURE LINE</div>
+                <div>THIS IS A FEATURE LINE</div>
+                <div>THIS IS A FEATURE LINE</div>
+                <div>THIS IS A FEATURE LINE</div>
+              </div>
+              <div style={{marginTop: 20, display: 'flex', flexDirection: 'row', justifyContent: 'center'}} >
+                <div style={{margin: '0 5px'}} >
+                  <OutlinedButton color={BASEGREEN} > Learn More </OutlinedButton>
+                </div>
+                <div style={{margin: '0 5px'}} >
+                  <OutlinedButton color={BASERED} > Book a Demo </OutlinedButton>
+                </div>
+              </div>
+            </div>
+          </div>
+
+         
           <div className='flex-center'> 
             <div id='seen-in'> 
               <div className='feature-title'>
@@ -259,7 +290,6 @@ const Home = props => {
             </div> 
           </div> 
 
-         
           <div className='flex-center'> 
             <div id='request-demo'> 
               <div className='feature-title'>
@@ -280,10 +310,18 @@ const Home = props => {
             </div> 
           </div> 
 
-          <div className='horizontal-center'>
+          <div className='horizontal-center' style={{margin: '40px 0'}} >
             <div>
-              <div style={{margin: '15px 0'}} >
-                <span style={{fontSize: '1.4em'}} >Featured Blog Post</span>
+              <div style={{marginBottom: 10}} >
+                <div style={{textAlign: 'left'}} >
+                  <span style={{fontSize: '0.8em'}} >Featured Blog Post</span>
+                </div>
+                <div style={{textAlign: 'left'}} >
+                  <span style={{fontSize: '1.6em', fontWeight: 500}} >The Best Time To Pitch a Journalist</span>
+                </div>
+                <div style={{textAlign: 'left'}} >
+                  <span>What does data say is the best time to pitch reporters?</span>
+                </div>
               </div>
               <div className='vertical-center horizontal-center' style={{width: 700, height: 300, border: '4px solid red'}} >
                 IMG CONTENTTTTT AND WORD
