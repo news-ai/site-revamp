@@ -5,6 +5,7 @@ import {Link} from 'react-router-dom';
 import Dialog from 'material-ui/Dialog';
 import SolidButton from './SolidButton';
 import OutlinedButton from './OutlinedButton';
+import FontIcon from 'material-ui/FontIcon';
 import {LightenDarkenColor} from './utils';
 
 import airplane1Img from './images/airplane-2.png';
@@ -87,7 +88,6 @@ const Landing = ({content}) => (
       </div>
 
     {/*
-
       <div style={{
         display: 'flex',
         alignItems: 'center',
@@ -127,6 +127,37 @@ const Landing = ({content}) => (
     </div> 
   );
 
+const FeatureCard = ({imgAlt, imgSrc, headline, description}) => (
+  <div className='flex-center'> 
+    <div className='feature'> 
+      <div className='feature-image'>
+        <img alt={imgAlt} src={imgSrc} /> 
+      </div> 
+      <div className='description description-margin'> 
+        <div className='feature-title left-align'> 
+          <p> {headline} </p> 
+        </div> 
+        <div className='feature-description'>
+          <p> {description} </p> 
+        </div> 
+        <SolidButton color='#384083'> Learn More </SolidButton>
+      </div> 
+    </div>
+  </div> 
+  );
+
+const HoverCard = styled.div`
+  flex-basis: 500px;
+  background: #F8F8F8;
+  margin: 10px 0;
+  padding: 20px 10px;
+  transition: box-shadow 0.3s;
+
+  & :hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  }
+`;
+
 const Home = props => {
   return (
       <div>
@@ -143,72 +174,33 @@ const Home = props => {
             <img height={550} src={macbookMockup} />
           </div>
 
-        
-          <div className='flex-center'> 
-            <div className='feature'> 
-              <div className='feature-image'>
-                <img alt='bird background image' src={birdImg} /> 
-              </div> 
-              <div className='description description-margin'> 
-                <div className='feature-title left-align'> 
-                  <p> Personalize Your Pitch </p> 
-                </div> 
-                <div className='feature-description'>
-                  <p> Effortlessly send personalized pitches to anyone on your media lists and monitor your pitch success.</p> 
-                </div> 
-                <SolidButton color='#384083'> Learn More </SolidButton>
-              </div> 
-            </div>
-          </div> 
-          <div className='flex-center'> 
-            <div className='feature'> 
-              <div className='feature-image switch-image'>
-                <img alt='fox background image' src={foxImg} /> 
-              </div> 
-              <div className='description switch-description'> 
-                <div className='feature-title left-align'>
-                  <p> Do it All On One Platform </p> 
-                </div> 
-                <div className='feature-description'> 
-                  <p> Centralize and easily manage your media lists on a single platform.  </p> 
-                </div> 
-                <SolidButton color='#384083'> Learn More </SolidButton>
-              </div> 
-            </div>
-          </div> 
-          <div className='flex-center'> 
-            <div className='feature'> 
-              <div className='feature-image'>
-                <img alt='snail background image' src={snailImg} /> 
-              </div> 
-              <div className='description description-margin'> 
-                <div className='feature-title left-align'> 
-                  <p> Stay Up to Date with Influencers </p> 
-                </div> 
-                <div className='feature-description'>
-                  <p> Painlessly stay up to date with what contacts on your media lists are posting on social media. </p> 
-                </div> 
-                <SolidButton color='#384083'> Learn More </SolidButton>
-              </div> 
-            </div>
-          </div> 
-          <div className='flex-center'> 
-            <div className='feature'> 
-              <div className='feature-image switch-image'>
-                <img alt='collaborate background image' src={collaborateImg} /> 
-              </div> 
-              <div className='description switch-description'> 
-                <div className='feature-title left-align'>
-                  <p> Bring it All Together </p> 
-                </div> 
-                <div className='feature-description'> 
-                  <p> Consolidate your agency’s contacts by sharing and collaborating on media lists. </p> 
-                </div> 
-                <SolidButton color='#384083'> Learn More </SolidButton>
-              </div> 
-            </div>
-          </div> 
+          <FeatureCard
+          imgAlt='bird background image'
+          imgSrc={birdImg}
+          headline='Personalize Your Pitch'
+          description='Effortlessly send personalized pitches to anyone on your media lists and monitor your pitch success.'
+          />
 
+          <FeatureCard
+          imgAlt='snail background image'
+          imgSrc={snailImg}
+          headline='Do it All On One Platform'
+          description='Centralize and easily manage your media lists on a single platform.'
+          />
+        
+          <FeatureCard
+          imgAlt='fox background image'
+          imgSrc={foxImg}
+          headline='Stay Up to Date with Influencers'
+          description='Painlessly stay up to date with what contacts on your media lists are posting on social media.'
+          />
+      
+          <FeatureCard
+          imgAlt='collaborate background image'
+          imgSrc={collaborateImg}
+          headline='Bring it All Together'
+          description='Consolidate your agency’s contacts by sharing and collaborating on media lists.'
+          />
 
           <div style={{
             display: 'flex',
@@ -216,12 +208,7 @@ const Home = props => {
             flexFlow: 'row wrap',
             marginTop: 20
           }} >
-            <div style={{
-              flexBasis: 500,
-              background: '#F8F8F8',
-              margin: '10px 0',
-              padding: '20px 10px',
-            }} >
+            <HoverCard>
               <div>
                 <span>Freelancer/Small Agency</span>
               </div>
@@ -248,7 +235,8 @@ const Home = props => {
                   </a>
                 </div>
               </div>
-            </div>
+            </HoverCard>
+
             <div style={{
               flexBasis: 500,
               background: '#F8F8F8',
