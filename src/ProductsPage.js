@@ -36,8 +36,35 @@ const PersonalizeYourPitch = () => (
       <p>Schedule a future date, switch client email that you are using, and then click send! Next step, check how your emails performed by going to ANALYTICS LINK HERE.</p>
     </div>
     <div>
-      Try It for Yourself
+      <button>Try It for Yourself</button>
     </div>
+  </div>
+  );
+
+const EmailAnalytics = () => (
+  <div>
+    <div>Understand Metrics, See Trends, Improve Results</div>
+    <div>
+      <div>Open/Click Rate Per Email</div>
+      <p>See how many times a recepient opened your email and clicked on embedded links to gauge interest</p>
+    </div>
+    <div>
+      <div>Campaign Breakdown</div>
+      <p>A glance view of how a campaign performed</p>
+    </div>
+    <div>
+      <div>Week-to-Week</div>
+      <p>Track how your campaigns are being received over time</p>
+    </div>
+    <div>
+      <button>Try It for Yourself</button>
+    </div>
+  </div>
+  );
+
+const DifferentEmailForDifferentClients = () => (
+  <div>
+    
   </div>
   );
 
@@ -58,6 +85,9 @@ const ProductsPage = props => (
     </div>
     <div className='horizontal-center'>
       <PersonalizeYourPitch />
+    </div>
+    <div className='horizontal-center'>
+      <EmailAnalytics />
     </div>
   </div>
   );
