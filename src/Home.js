@@ -17,11 +17,14 @@ import foxImg from './images/fox-mobile.png';
 import snailImg from './images/snail-mobile.png';
 import collaborateImg from './images/collaborate-mobile.png';
 import prDailyLogo from './images/pr_daily.png';
-import macbookMockup from './images/mockup_homepage_on_macbook.png';
+import macbookHomeMockup from './images/mockup_homepage_on_macbook.png';
+import macbookListMockup from './images/mockup_listpage_on_macbook.png';
 
 const BASEBLUE = '#384083';
 const BASERED = '#ff0000';
 const BASEGREEN = '#488209';
+const DEFAULT_BACKGROUND_GREY = '#ECECEC';
+const LIGHTER_BACKGROUND_GREY = '#F8F8F8';
 const RoundedInput = styled.input`
   border: none;
   font-family: 'Raleway', sans-serif;
@@ -175,7 +178,7 @@ const Home = props => {
           </div> 
 
           <div className='horizontal-center'>
-            <img height={550} src={macbookMockup} />
+            <img height={550} src={macbookListMockup} />
           </div>
 
           <FeatureCard
@@ -302,7 +305,7 @@ const Home = props => {
             <div>
               <div style={{marginBottom: 10}} >
                 <div >
-                  <span style={{fontSize: '1.6em', fontWeight: 500}} >Not quite ready to dip your toe in but want to stay up-to-date on what's new with us?</span>
+                  <span style={{fontSize: '1.6em', fontWeight: 500}} >Not quite ready to dip your toe in but want to stay up-to-date on what's new?</span>
                 </div>
                 <div >
                   <span>Subscribe to Our Blog</span>
@@ -315,7 +318,7 @@ const Home = props => {
           </div>
 
           <div className='horizontal-center' style={{margin: '40px 0'}} >
-            <div>
+            <div style={{padding: '20px 40px', background: LIGHTER_BACKGROUND_GREY}} >
               <div style={{marginBottom: 10}} >
                 <div style={{textAlign: 'left'}} >
                   <span style={{fontSize: '0.8em'}} >Featured Blog Post</span>
