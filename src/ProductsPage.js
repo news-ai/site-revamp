@@ -1,4 +1,9 @@
 import React, { Component } from 'react';
+import {
+  Route,
+  Link
+} from 'react-router-dom';
+import OutlinedButton from './OutlinedButton';
 
 const DEFAULT_BACKGROUND_GREY = '#ECECEC';
 const LIGHTER_BACKGROUND_GREY = '#F8F8F8';
@@ -62,9 +67,79 @@ const EmailAnalytics = () => (
   </div>
   );
 
+const ProductOverview = () => (
+  <div>
+    <div className='horizontal-center'>
+      <div style={{padding: 20, background: 'lightblue'}} >
+        <h4>Flexible List-Making while Keeping Contacts Up-to-Date</h4>
+        <div>No more duplicate information across multiple Excel sheets for the same contacts. We know that building media list is your bread-and-butter, but sync-ing information up-to-date across lists shouldn't be a pain.</div>
+        <div style={{margin: 10}} >
+          <Link to='/products/organize'>
+            <OutlinedButton>Learn More</OutlinedButton>
+          </Link>
+        </div>
+      </div>
+    </div>
+    <div className='horizontal-center'>
+      <div style={{padding: 20, background: 'lightblue'}} >
+        <h4>PERSONALIZE YOUR PITCH</h4>
+        <div>marketing stucfffff</div>
+        <div style={{margin: 10}} >
+          <Link to='/products/personalize-pitch'>
+            <OutlinedButton>Learn More</OutlinedButton>
+          </Link>
+        </div>
+      </div>
+    </div>
+    <div className='horizontal-center'>
+      <div style={{padding: 20, background: 'lightblue'}} >
+        <h4>EMAIL ANALYTICS</h4>
+        <div>marketing stucfffff</div>
+        <div style={{margin: 10}} >
+          <Link to='/products/email-analytics'>
+            <OutlinedButton>Learn More</OutlinedButton>
+          </Link>
+        </div>
+      </div>
+    </div>
+    <div className='horizontal-center'>
+      <div style={{padding: 20, background: 'lightblue'}} >
+        <h4>DIFFERENT EMAILS</h4>
+        <div>marketing stucfffff</div>
+        <div style={{margin: 10}} >
+          <Link to='/products/different-emails'>
+            <OutlinedButton>Learn More</OutlinedButton>
+          </Link>
+        </div>
+      </div>
+    </div>
+  </div>
+  );
+
 const DifferentEmailForDifferentClients = () => (
   <div>
-    
+    <div>Email Integrations</div>
+    <div>
+      <div>Different Email Address for Each Client</div>
+      <p>Set up your multiple email addresses with our service and attach email signature to each one for easy switching when your workon different client's campaigns</p>
+    </div>
+    <div>
+      <div>Gmail/Outlook/Private Email Server</div>
+      <p>Easily integrate our platform to use your existing email provider to deliver your campaigns</p>
+    </div>
+    <div>
+      <button>Try It for Yourself</button>
+    </div>
+  </div>
+  );
+
+const SyncCommunicationsToContact = () => (
+  <div>
+    <div>Flexible List Building but Have Information All Go to One Place</div>
+    <div>
+      <div>One Place to Check for All Previous Communication</div>
+      <p>Create as many media lists with duplicates as you want, when you update the contact in one, we'll update the same contact in all other lists that it is on.</p>
+    </div>
   </div>
   );
 
@@ -83,12 +158,11 @@ const ProductsPage = props => (
     <div className='horizontal-center'>
       <div style={{width: 800, height: 500, border: '5px solid green'}} > PRODUCT IMAGE PLACEHOLDER HERE</div>
     </div>
-    <div className='horizontal-center'>
-      <PersonalizeYourPitch />
-    </div>
-    <div className='horizontal-center'>
-      <EmailAnalytics />
-    </div>
+    <Route exact path='/products' component={ProductOverview} />
+    <Route path='/products/organize' component={SyncCommunicationsToContact} />
+    <Route path='/products/personalize-pitch' component={PersonalizeYourPitch} />
+    <Route path='/products/email-analytics' component={EmailAnalytics} />
+    <Route path='/products/different-emails' component={DifferentEmailForDifferentClients} />
   </div>
   );
 
