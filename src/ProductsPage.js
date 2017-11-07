@@ -143,6 +143,35 @@ const SyncCommunicationsToContact = () => (
   </div>
   );
 
+const routes = [
+  {
+    exact: true,
+    name: 'Overview',
+    component: ProductOverview,
+    path: '/products'
+  },
+  {
+    name: 'Organize',
+    component: SyncCommunicationsToContact,
+    path: '/products/organize'
+  },
+  {
+    name: 'Personalize Pitch',
+    component: PersonalizeYourPitch,
+    path: '/products/personalize-pitch'
+  },
+  {
+    name: 'Email Analytics',
+    component: EmailAnalytics,
+    path: '/products/email-analytics'
+  },
+  {
+    name: 'Email Integrations',
+    component: DifferentEmailForDifferentClients,
+    path: '/products/different-emails'
+  },
+];
+
 const ProductsPage = props => (
   <div style={{
     position: 'relative',
@@ -158,11 +187,18 @@ const ProductsPage = props => (
     <div className='horizontal-center'>
       <div style={{width: 800, height: 500, border: '5px solid green'}} > PRODUCT IMAGE PLACEHOLDER HERE</div>
     </div>
-    <Route exact path='/products' component={ProductOverview} />
-    <Route path='/products/organize' component={SyncCommunicationsToContact} />
-    <Route path='/products/personalize-pitch' component={PersonalizeYourPitch} />
-    <Route path='/products/email-analytics' component={EmailAnalytics} />
-    <Route path='/products/different-emails' component={DifferentEmailForDifferentClients} />
+    {routes.map((route, i) =>
+      <div>
+        <Route exact={route.exact} key={route.path} path={route.path} component={route.component} />
+        <Route exact={route.exact} key={route.path} path={route.path} component={() => route.exact ? null : (
+            <div>
+            {i > 0 && <Link to={routes[i-1].path}>Go to {routes[i-1].name}</Link>}
+            {i < routes.length-1 && <Link to={routes[i+1].path}>Go to {routes[i+1].name}</Link>}
+            </div>
+          )
+        } />
+      </div>
+      )}
   </div>
   );
 
