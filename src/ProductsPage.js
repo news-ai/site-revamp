@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {
   Route,
   Link
@@ -9,6 +9,7 @@ import HoverCard from './HoverCard';
 import FontIcon from 'material-ui/FontIcon';
 import macbookListMockup from './images/mockup_listpage_on_macbook.png';
 import {grey700} from 'material-ui/styles/colors';
+import throttle from 'lodash/throttle';
 
 const DEFAULT_BACKGROUND_GREY = '#ECECEC';
 const LIGHTER_BACKGROUND_GREY = '#F8F8F8';
@@ -52,31 +53,74 @@ const DifferentEmailForDifferentClients = () => (
   );
 
 
-const PersonalizeYourPitch = () => (
-  <div>
-    <div>Simple Smooth Workflow for Campaigns</div>
-    Draft -> Merge -> Edit -> Send
-    <div>
-      <div>Draft Templates</div>
-      <p>Build and manage your press release/campaign/content in our full-page editor</p>
-    </div>
-    <div>
-      <div>Build List and Merge</div>
-      <p>Upload your lists and merge your fields</p>
-    </div>
-    <div>
-      <div>Preview and Edit</div>
-      <p>Have a few emails you want to pay special attention to? We generate a preview of all the emails you are sending and you can edit them on the spot!</p>
-    </div>
-    <div>
-      <div>Deliver Emails</div>
-      <p>Schedule a future date, switch client email that you are using, and then click send! Next step, check how your emails performed by going to ANALYTICS LINK HERE.</p>
-    </div>
-    <div>
-      <button>Try It for Yourself</button>
-    </div>
-  </div>
-  );
+class PersonalizeYourPitch extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {scrollTop: 0};
+  }
+
+  componentDidMount() {
+    const getScrollTop = () => window.pageYOffset || (document.documentElement || document.body.parentNode || document.body).scrollTop;
+
+    window.onscroll = throttle(() => {
+      const scrollTop = getScrollTop();
+      this.setState({scrollTop});
+    }, 150);
+  }
+
+  componentWillUnmount() {
+    window.onscroll = undefined;
+  }
+
+  render() {
+    return (
+      <div style={{
+        display: 'flex',
+        justifyContent: 'space-around',
+      }} >
+        <div>
+          <div className='horizontal-center'>
+            <span style={{fontSize: '1.5em'}} >Simple, Smooth Workflow for Building Campaigns</span>
+          </div>
+          <div className='horizontal-center'>
+            <span>Draft -> Merge -> Edit -> Send</span>
+          </div>
+          <div>
+            <div>Draft Templates</div>
+            <p>Build and manage your press release/campaign/content in our full-page editor</p>
+          </div>
+          <div>
+            <div>Build List and Merge</div>
+            <p>Upload your lists and merge your fields</p>
+          </div>
+          <div style={{height: 800}} >
+            <div>Preview and Edit</div>
+            <p>Have a few emails you want to pay special attention to? We generate a preview of all the emails you are sending and you can edit them on the spot!</p>
+          </div>
+          <div>
+            <div>Deliver Emails</div>
+            <p>Schedule a future date, switch client email that you are using, and then click send! Next step, check how your emails performed by going to ANALYTICS LINK HERE.</p>
+          </div>
+          <div>
+            <button>Try It for Yourself</button>
+          </div>
+        </div>
+        <div
+        ref={ref => this.verticalBar = ref}
+        onClick={e => {
+          if (this.verticalBar) console.log(this.verticalBar.offsetTop);
+        }}
+        style={{width: 100, height: 1200, background: 'red'}}
+        >
+          <div
+          style={{
+            height: this.verticalBar && this.state.scrollTop - this.verticalBar.offsetTop > 0 ? this.state.scrollTop - this.verticalBar.offsetTop : 0, background: 'green'}} ></div>
+        </div>
+      </div>
+    );
+  }
+}
+ 
 
 const EmailAnalytics = () => (
   <div>
