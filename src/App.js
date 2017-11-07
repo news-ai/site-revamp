@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import {
   BrowserRouter as Router,
   Route,
-  Link
+  Link,
+  withRouter
 } from 'react-router-dom';
 
 import PricingPage from './PricingPage';
@@ -21,6 +22,20 @@ import './css/stylesheet-wider.css';
 
 const BASEBLUE = '#384083';
 const BASERED = '#ff0000';
+
+class ScrollToTop extends Component {
+  componentDidUpdate(prevProps) {
+    if (this.props.location !== prevProps.location) {
+      window.scrollTo(0, 0)
+    }
+  }
+
+  render() {
+    return this.props.children;
+  }
+}
+
+const ScrollManager = withRouter(ScrollToTop);
 
 class App extends Component {
   render() {
@@ -98,9 +113,11 @@ class App extends Component {
             </div> 
           </div>
 
-          <Route exact path='/' component={Home} />
-          <Route path='/pricing' component={PricingPage} />
-          <Route path='/products' component={ProductsPage} />
+          <ScrollManager>
+            <Route exact path='/' component={Home} />
+            <Route path='/pricing' component={PricingPage} />
+            <Route path='/products' component={ProductsPage} />
+          </ScrollManager>
           
           <div id='footer'> 
             <img alt='facebook logo' className='social-media-image' src={facebookLogo} />

@@ -4,21 +4,11 @@ import {
   Link
 } from 'react-router-dom';
 import OutlinedButton from './OutlinedButton';
+import FontIcon from 'material-ui/FontIcon';
 
 const DEFAULT_BACKGROUND_GREY = '#ECECEC';
 const LIGHTER_BACKGROUND_GREY = '#F8F8F8';
 const GREYFONT = '#E2E3DD';
-
-const LeftBlock = () => (
-  <div>
-    
-  </div>
-  );
-
-const RightBlock = () => (
-  <div></div>
-  );
-
 
 const PersonalizeYourPitch = () => (
   <div>
@@ -172,6 +162,16 @@ const routes = [
   },
 ];
 
+const LinkLabel = ({to, children}) => (
+  <Link style={{textDecoration: 'none'}} to={to}>
+    <div className='vertical-center' style={{
+      padding: 5,
+      background: 'lightblue',
+      color: 'red'
+    }} >{children}</div>
+  </Link>
+  );
+
 const ProductsPage = props => (
   <div style={{
     position: 'relative',
@@ -190,10 +190,18 @@ const ProductsPage = props => (
     {routes.map((route, i) =>
       <div>
         <Route exact={route.exact} key={route.path} path={route.path} component={route.component} />
-        <Route exact={route.exact} key={route.path} path={route.path} component={() => route.exact ? null : (
-            <div>
-            {i > 0 && <Link to={routes[i-1].path}>Go to {routes[i-1].name}</Link>}
-            {i < routes.length-1 && <Link to={routes[i+1].path}>Go to {routes[i+1].name}</Link>}
+        <Route exact={route.exact} key={route.path + '-btns'} path={route.path} component={() => route.exact ? null : (
+            <div style={{display: 'flex', justifyContent: 'space-around'}} >
+            {i > 0 &&
+              <LinkLabel to={routes[i-1].path}>
+                <FontIcon className='fa fa-arrow-left' style={{fontSize: '0.9em', margin: '0 5px'}} />
+                <span>Go to {routes[i-1].name}</span>
+              </LinkLabel>}
+            {i < routes.length-1 &&
+              <LinkLabel to={routes[i+1].path}>
+                <span>Go to {routes[i+1].name}</span>
+                <FontIcon className='fa fa-arrow-right' style={{fontSize: '0.9em', margin: '0 5px'}} />
+              </LinkLabel>}
             </div>
           )
         } />
