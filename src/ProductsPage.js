@@ -4,11 +4,15 @@ import {
   Link
 } from 'react-router-dom';
 import OutlinedButton from './OutlinedButton';
+import SolidButton from './SolidButton';
+import HoverCard from './HoverCard';
 import FontIcon from 'material-ui/FontIcon';
 import macbookListMockup from './images/mockup_listpage_on_macbook.png';
+import {grey700} from 'material-ui/styles/colors';
 
 const DEFAULT_BACKGROUND_GREY = '#ECECEC';
 const LIGHTER_BACKGROUND_GREY = '#F8F8F8';
+const BASEGREEN = '#488209';
 const GREYFONT = '#E2E3DD';
 
 const SyncCommunicationsToContact = () => (
@@ -95,17 +99,45 @@ const EmailAnalytics = () => (
   </div>
   );
 
-const ProductFeatureCard = ({title, tagline, to}) => (
-    <div className='horizontal-center' style={{margin: '10px 0'}} >
-      <div style={{padding: 20, background: LIGHTER_BACKGROUND_GREY}} >
-        <h4>{title}</h4>
-        <div>{tagline}</div>
-        <div style={{margin: 10}} >
-          <Link to={to} >
-            <OutlinedButton>Learn More</OutlinedButton>
-          </Link>
+const ProductFeatureCard = ({title, tagline, to, textBlockPosition}) => (
+    <div className='horizontal-center' style={{margin: '30px 0'}} >
+      <HoverCard>
+        <div style={{
+          padding: '30px 20px',
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+        }} >
+          <div style={{
+            flex: 1,
+            order: textBlockPosition === 'left' ? 1 : 0,
+            display: 'flex',
+            justifyContent: 'center'
+          }} >
+            <div style={{height: 100, width: 100, border: '3px solid red'}} ></div>
+          </div>
+          <div style={{
+            flex: 2,
+            padding: '0 15px'
+          }} >
+            <div>
+              <span style={{fontSize: '1.3em'}} >{title}</span>
+            </div>
+            <div style={{
+              margin: '20px 5px',
+              color: grey700,
+            }} >{tagline}</div>
+            <div style={{
+              display: 'flex',
+              justifyContent: 'center'
+            }} >
+              <Link to={to} >
+                <OutlinedButton color={BASEGREEN} >Learn More</OutlinedButton>
+              </Link>
+            </div>
+          </div>
         </div>
-      </div>
+      </HoverCard>
     </div>
   );
 
@@ -126,6 +158,7 @@ const ProductOverview = () => (
     to='/products/organize'
     />
     <ProductFeatureCard
+    textBlockPosition='left'
     title='PERSONALIZE YOUR PITCH'
     tagline="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
     to='/products/personalize-pitch'
@@ -136,10 +169,14 @@ const ProductOverview = () => (
     to='/products/email-analytics'
     />
     <ProductFeatureCard
+    textBlockPosition='left'
     title='DIFFERENT EMAILS'
     tagline="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
     to='/products/different-emails'
     />
+    <div className='horizontal-center' style={{margin: '40px 0', padding: 20, background: LIGHTER_BACKGROUND_GREY}} >
+      <SolidButton color={BASEGREEN} >Try It for Yourself</SolidButton>
+    </div>
   </div>
   );
 

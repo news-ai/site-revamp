@@ -5,6 +5,7 @@ import {Link} from 'react-router-dom';
 import Dialog from 'material-ui/Dialog';
 import SolidButton from './SolidButton';
 import OutlinedButton from './OutlinedButton';
+import HoverCard from './HoverCard';
 import FontIcon from 'material-ui/FontIcon';
 import {LightenDarkenColor} from './utils';
 
@@ -152,18 +153,6 @@ const FeatureCard = ({imgAlt, imgSrc, headline, description}) => (
   );
 
 
-const HoverCard = styled.div`
-  flex-basis: 600px;
-  background: #F8F8F8;
-  margin: 10px 0;
-  padding: 20px 10px;
-  box-shadow: 0 3px 5px 0 rgba(0,0,0,0.08);
-  transition: box-shadow 0.3s ease-in-out;
-
-  &:hover {
-    box-shadow: 0 5px 15px 2px rgba(0, 0, 0, 0.1);
-  }
-`;
 
 const Home = props => {
   return (
@@ -215,58 +204,62 @@ const Home = props => {
             flexFlow: 'row wrap',
             marginTop: 20,
           }} >
-            <HoverCard>
-              <div>
-                <span>Freelancer/Small Agency</span>
-              </div>
-              <div style={{
-                display: 'flex',
-                flexDirection: 'column',
-                padding: 3,
-              }} >
-                <div>THIS IS A FEATURE LINE</div>
-                <div>THIS IS A FEATURE LINE</div>
-                <div>THIS IS A FEATURE LINE</div>
-                <div>THIS IS A FEATURE LINE</div>
-                <div>THIS IS A FEATURE LINE</div>
-              </div>
-              <div style={{marginTop: 20, display: 'flex', flexDirection: 'row', justifyContent: 'center'}} >
-                <div style={{margin: '0 5px'}} >
-                  <Link to='/products'>
-                    <OutlinedButton color={BASEGREEN} > Learn More </OutlinedButton>
-                  </Link>
+            <div style={{flexBasis: 600}}>
+              <HoverCard>
+                <div>
+                  <span>Freelancer/Small Agency</span>
                 </div>
-                <div style={{margin: '0 5px'}} >
-                  <a href='https://tabulae.newsai.co' style={{textDecoration: 'none'}} >
-                    <OutlinedButton color={BASERED} > Try it Now </OutlinedButton>
-                  </a>
+                <div style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  padding: 3,
+                }} >
+                  <div>THIS IS A FEATURE LINE</div>
+                  <div>THIS IS A FEATURE LINE</div>
+                  <div>THIS IS A FEATURE LINE</div>
+                  <div>THIS IS A FEATURE LINE</div>
+                  <div>THIS IS A FEATURE LINE</div>
                 </div>
-              </div>
-            </HoverCard>
+                <div style={{marginTop: 20, display: 'flex', flexDirection: 'row', justifyContent: 'center'}} >
+                  <div style={{margin: '0 5px'}} >
+                    <Link to='/products'>
+                      <OutlinedButton color={BASEGREEN} > Learn More </OutlinedButton>
+                    </Link>
+                  </div>
+                  <div style={{margin: '0 5px'}} >
+                    <a href='https://tabulae.newsai.co' style={{textDecoration: 'none'}} >
+                      <OutlinedButton color={BASERED} > Try it Now </OutlinedButton>
+                    </a>
+                  </div>
+                </div>
+              </HoverCard>
+            </div>
 
-            <HoverCard>
-              <h4>Mid-size/Large Agency</h4>
-              <div style={{
-                display: 'flex',
-                flexDirection: 'column',
-                padding: 3,
-              }} >
-                <div>...everything in Freelancer tier</div>
-                <div>- Dedicated Account Support</div>
-                <div>- Team Collaborative Editing Feature</div>
-                <div>- Advanced Search Features</div>
-                <div>- Admin Control of Team Member Level of Access</div>
-                <div>- and more</div>
-              </div>
-              <div style={{marginTop: 20, display: 'flex', flexDirection: 'row', justifyContent: 'center'}} >
-                <div style={{margin: '0 5px'}} >
-                  <OutlinedButton color={BASEGREEN} > Learn More </OutlinedButton>
+            <div style={{flexBasis: 600}}>
+              <HoverCard>
+                <h4>Mid-size/Large Agency</h4>
+                <div style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  padding: 3,
+                }} >
+                  <div>...everything in Freelancer tier</div>
+                  <div>- Dedicated Account Support</div>
+                  <div>- Team Collaborative Editing Feature</div>
+                  <div>- Advanced Search Features</div>
+                  <div>- Admin Control of Team Member Level of Access</div>
+                  <div>- and more</div>
                 </div>
-                <div style={{margin: '0 5px'}} >
-                  <OutlinedButton color={BASERED} > Book a Demo </OutlinedButton>
+                <div style={{marginTop: 20, display: 'flex', flexDirection: 'row', justifyContent: 'center'}} >
+                  <div style={{margin: '0 5px'}} >
+                    <OutlinedButton color={BASEGREEN} > Learn More </OutlinedButton>
+                  </div>
+                  <div style={{margin: '0 5px'}} >
+                    <OutlinedButton color={BASERED} > Book a Demo </OutlinedButton>
+                  </div>
                 </div>
-              </div>
-            </HoverCard>
+              </HoverCard>
+            </div>
           </div>
 
          
