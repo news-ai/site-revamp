@@ -211,7 +211,7 @@ const EmailAnalytics = () => (
   </div>
   );
 
-const ProductFeatureCard = ({title, tagline, to, textBlockPosition, imgSrc}) => (
+const ProductFeatureCard = ({title, tagline, to, textBlockPosition, imgSrc, children}) => (
     <div className='horizontal-center' style={{margin: '30px 0'}} >
       <HoverCard>
         <div style={{
@@ -237,15 +237,22 @@ const ProductFeatureCard = ({title, tagline, to, textBlockPosition, imgSrc}) => 
             margin: '0 20px'
           }} >
             <div>
-              <span style={{fontSize: '1.3em'}} >{title}</span>
+              <span style={{
+                fontSize: '1.3em',
+                color: grey700,
+                fontWeight: 500
+              }} >{title}</span>
             </div>
             <div style={{
               margin: '20px 5px',
-              color: grey700,
             }} >{tagline}</div>
+            <div>
+              {children}
+            </div>
             <div style={{
               display: 'flex',
-              justifyContent: 'center'
+              justifyContent: 'center',
+              marginTop: 20
             }} >
               <Link to={to} >
                 <OutlinedButton color={BASEGREEN} >Learn More</OutlinedButton>
@@ -257,23 +264,48 @@ const ProductFeatureCard = ({title, tagline, to, textBlockPosition, imgSrc}) => 
     </div>
   );
 
+const styles ={
+  listItem: {fontSize: '0.9em', marginTop: 5},
+};
+
 const ProductOverview = () => (
   <div>
     <div className='horizontal-center' style={{margin: '10px 0'}} >
-      <span style={{fontSize: '2.2em'}} >Tagline here meet here</span>
+      <span style={{fontSize: '2.2em'}} >The Best CRM for PR</span>
     </div>
     <div className='horizontal-center' style={{margin: '20px 0'}} >
-      <span style={{fontSize: '1.8em'}} >Organize your contacts blah blah blah taglineeeeeeee</span>
+      <span style={{fontSize: '1.8em'}} >Flexible List-making that Keep Your Lists in Sync</span>
     </div>
     <div className='horizontal-center'>
       <div style={{width: 800, height: 500, border: '5px solid green'}} > PRODUCT IMAGE PLACEHOLDER HERE</div>
     </div>
     <ProductFeatureCard
-    title='Flexible List-Making while Keeping Contacts Up-to-Date'
-    tagline="No more duplicate information across multiple Excel sheets for the same contacts. We know that building media list is your bread-and-butter, but sync-ing information up-to-date across lists shouldn't be a pain."
+    title='Keeping Contacts Up-to-Date'
+    tagline='No more contact duplicates across lists or outdated info'
     to='/products/organize'
     imgSrc={plainListviewSmall}
-    />
+    >
+      <div>
+        <ul>
+          <li style={styles.listItem} >Central Contact Profile to Keep Track of All Correspondences and Notes</li>
+          <li style={styles.listItem} >Auto contact lookup through email</li>
+        </ul>
+      </div>
+    </ProductFeatureCard>
+    <ProductFeatureCard
+    title='Flexible List-Making'
+    tagline='Add and Edit Your Lists Anywhere, Update Once, Update Everywhere'
+    to='/products/organize'
+    imgSrc={plainListviewSmall}
+    >
+      <div>
+        <ul>
+          <li style={styles.listItem} >One place to update, all custom lists with the contact gets automatically updated</li>
+          <li style={styles.listItem} >Organize Lists with our Advanced Tagging and Search</li>
+          <li style={styles.listItem} >Add a contact from any page to any list using our Chrome Extension</li>
+        </ul>
+      </div>
+    </ProductFeatureCard>
     <ProductFeatureCard
     textBlockPosition='left'
     title='PERSONALIZE YOUR PITCH'
@@ -282,8 +314,8 @@ const ProductOverview = () => (
     imgSrc={plainListviewSmall}
     />
     <ProductFeatureCard
-    title='EMAIL ANALYTICS'
-    tagline="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    title='Email Analytics'
+    tagline='Dashboard for Campaign Performance'
     to='/products/email-analytics'
     imgSrc={plainListviewSmall}
     />
@@ -293,7 +325,15 @@ const ProductOverview = () => (
     tagline="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
     to='/products/different-emails'
     imgSrc={plainListviewSmall}
-    />
+    >
+      <div>
+        <ul>
+          <li style={styles.listItem} >Quickview of how individual campaign performed</li>
+          <li style={styles.listItem} >In-depth timeseries view of how many times your recepients opened/clicked</li>
+          <li style={styles.listItem} >Interactive Graph of how All Campaigns Performed</li>
+        </ul>
+      </div>
+    </ProductFeatureCard>
     <div
     style={{
       margin: '40px 0',
