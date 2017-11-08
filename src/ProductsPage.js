@@ -12,6 +12,7 @@ import {grey700} from 'material-ui/styles/colors';
 import throttle from 'lodash/throttle';
 import listpageEmailEditor from './images/listpage_email_editor.png';
 import plainListview from './images/plain_listview.png';
+import plainListviewSmall from './images/plain_listview_small.png';
 
 const DEFAULT_BACKGROUND_GREY = '#ECECEC';
 const LIGHTER_BACKGROUND_GREY = '#F8F8F8';
@@ -210,7 +211,7 @@ const EmailAnalytics = () => (
   </div>
   );
 
-const ProductFeatureCard = ({title, tagline, to, textBlockPosition}) => (
+const ProductFeatureCard = ({title, tagline, to, textBlockPosition, imgSrc}) => (
     <div className='horizontal-center' style={{margin: '30px 0'}} >
       <HoverCard>
         <div style={{
@@ -225,11 +226,15 @@ const ProductFeatureCard = ({title, tagline, to, textBlockPosition}) => (
             display: 'flex',
             justifyContent: 'center'
           }} >
-            <div style={{height: 100, width: 100, border: '3px solid red'}} ></div>
+            <img
+            height={190}
+            src={imgSrc}
+            style={{boxShadow: '0 5px 7px 0 rgba(0,0,0,0.08)'}} 
+            />
           </div>
           <div style={{
             flex: 2,
-            padding: '0 15px'
+            margin: '0 20px'
           }} >
             <div>
               <span style={{fontSize: '1.3em'}} >{title}</span>
@@ -267,23 +272,27 @@ const ProductOverview = () => (
     title='Flexible List-Making while Keeping Contacts Up-to-Date'
     tagline="No more duplicate information across multiple Excel sheets for the same contacts. We know that building media list is your bread-and-butter, but sync-ing information up-to-date across lists shouldn't be a pain."
     to='/products/organize'
+    imgSrc={plainListviewSmall}
     />
     <ProductFeatureCard
     textBlockPosition='left'
     title='PERSONALIZE YOUR PITCH'
     tagline="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
     to='/products/personalize-pitch'
+    imgSrc={plainListviewSmall}
     />
     <ProductFeatureCard
     title='EMAIL ANALYTICS'
     tagline="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
     to='/products/email-analytics'
+    imgSrc={plainListviewSmall}
     />
     <ProductFeatureCard
     textBlockPosition='left'
     title='DIFFERENT EMAILS'
     tagline="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
     to='/products/different-emails'
+    imgSrc={plainListviewSmall}
     />
     <div
     style={{
