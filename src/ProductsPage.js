@@ -10,10 +10,13 @@ import FontIcon from 'material-ui/FontIcon';
 import macbookListMockup from './images/mockup_listpage_on_macbook.png';
 import {grey700} from 'material-ui/styles/colors';
 import throttle from 'lodash/throttle';
+import listpageEmailEditor from './images/listpage_email_editor.png';
+import plainListview from './images/plain_listview.png';
 
 const DEFAULT_BACKGROUND_GREY = '#ECECEC';
 const LIGHTER_BACKGROUND_GREY = '#F8F8F8';
 const BASEGREEN = '#488209';
+const BASEBLUE = '#384083';
 const GREYFONT = '#E2E3DD';
 
 const SyncCommunicationsToContact = () => (
@@ -79,43 +82,107 @@ class PersonalizeYourPitch extends Component {
         justifyContent: 'space-around',
       }} >
         <div>
-          <div className='horizontal-center'>
-            <span style={{fontSize: '1.5em'}} >Simple, Smooth Workflow for Building Campaigns</span>
+          <div style={{margin: '15px 0'}} >
+            <div className='horizontal-center' style={{margin: '20px 0'}} >
+              <span style={{fontSize: '1.5em', color: BASEBLUE}} >Simple, Smooth Workflow for Building Campaigns</span>
+            </div>
+            <div className='horizontal-center'>
+              <span style={{color: grey700}} >Draft -> Merge -> Edit -> Send</span>
+            </div>
           </div>
-          <div className='horizontal-center'>
-            <span>Draft -> Merge -> Edit -> Send</span>
-          </div>
-          <div>
-            <div>Draft Templates</div>
-            <p>Build and manage your press release/campaign/content in our full-page editor</p>
-          </div>
-          <div>
-            <div>Build List and Merge</div>
-            <p>Upload your lists and merge your fields</p>
-          </div>
-          <div style={{height: 800}} >
-            <div>Preview and Edit</div>
-            <p>Have a few emails you want to pay special attention to? We generate a preview of all the emails you are sending and you can edit them on the spot!</p>
-          </div>
-          <div>
-            <div>Deliver Emails</div>
-            <p>Schedule a future date, switch client email that you are using, and then click send! Next step, check how your emails performed by going to ANALYTICS LINK HERE.</p>
+          <div style={{padding: '0 20px'}} >
+            <div className='vertical-center' style={{margin: '30px 0'}} >
+              <div style={{
+                padding: 30,
+                maxWidth: 600
+              }} >
+                <div>
+                  <span style={{fontSize: '1.2em'}} >1. Draft Templates and Preview</span>
+                </div>
+                <p>Build and manage your press release/campaign/content in our full-page Rich-text editor</p>
+              </div>
+              <div style={{padding: 15}} >
+                <img
+                style={{boxShadow: '0 5px 7px 0 rgba(0,0,0,0.08)'}} 
+                height={350} src={listpageEmailEditor}
+                />
+              </div>
+            </div>
+            <div style={{
+              margin: '30px 0',
+              display: 'flex',
+              justifyContent: 'space-around',
+              flexDirection: 'row',
+            }} >
+              <div style={{padding: 15}} >
+                <img
+                style={{boxShadow: '0 5px 7px 0 rgba(0,0,0,0.08)'}} 
+                height={350} src={plainListview}
+                />
+              </div>
+              <div style={{
+                padding: 30,
+                maxWidth: 600
+              }} >
+                <div>
+                  <span style={{fontSize: '1.2em'}} >2. Build List and Merge</span>
+                </div>
+                <p>Upload your lists, if we have the contact in the database, we'll autofill some fields like Publication/socials/etc.</p>
+                <p>Merge your fields using the template you built in Template Manager or create a new one in the Email Editor tab</p>
+              </div>
+            </div>
+            <div className='vertical-center' style={{margin: '30px 0'}} >
+              <div style={{
+                padding: 30,
+                maxWidth: 600
+              }} >
+                <div>
+                  <span style={{fontSize: '1.2em'}} >3. Review and Edit</span>
+                </div>
+                <p>Have a few emails you want to pay special attention to? We generate a preview of all the emails you are sending and you can edit them on the spot!</p>
+              </div>
+              <img
+              style={{boxShadow: '0 3px 5px 0 rgba(0,0,0,0.08)'}} 
+              height={350} src={listpageEmailEditor}
+              />
+            </div>
+            <div className='vertical-center' style={{margin: '30px 0'}} >
+              <img
+              style={{boxShadow: '0 3px 5px 0 rgba(0,0,0,0.08)'}} 
+              height={350} src={listpageEmailEditor}
+              />
+              <div style={{
+                padding: 30,
+                maxWidth: 600
+              }} >
+                <div>
+                  <span style={{fontSize: '1.2em'}} >4. Schedule, Send, and Evaluate</span>
+                </div>
+                <p>Schedule a future date, switch client email that you are using, and then click send! Next step, check how your emails performed by going to ANALYTICS LINK HERE.</p>
+              </div>
+            </div>
           </div>
           <div>
             <button>Try It for Yourself</button>
           </div>
         </div>
+      {/*
         <div
         ref={ref => this.verticalBar = ref}
         onClick={e => {
+          window.scrollTo(0, e.screenY);
           if (this.verticalBar) console.log(this.verticalBar.offsetTop);
         }}
         style={{width: 100, height: 1200, background: 'red'}}
         >
           <div
           style={{
-            height: this.verticalBar && this.state.scrollTop - this.verticalBar.offsetTop > 0 ? this.state.scrollTop - this.verticalBar.offsetTop : 0, background: 'green'}} ></div>
+            height: this.verticalBar && this.state.scrollTop - this.verticalBar.offsetTop > 0 ? this.state.scrollTop - this.verticalBar.offsetTop : 0,
+            background: 'green',
+          }} ></div>
         </div>
+      */}
+       
       </div>
     );
   }
@@ -218,8 +285,20 @@ const ProductOverview = () => (
     tagline="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
     to='/products/different-emails'
     />
-    <div className='horizontal-center' style={{margin: '40px 0', padding: 20, background: LIGHTER_BACKGROUND_GREY}} >
-      <SolidButton color={BASEGREEN} >Try It for Yourself</SolidButton>
+    <div
+    style={{
+      margin: '40px 0',
+      padding: 20,
+      background: LIGHTER_BACKGROUND_GREY,
+      display: 'flex' ,
+      flexDirection: 'column'
+    }} >
+      <div className='horizontal-center'>
+        <SolidButton color={BASEGREEN} >Try It for Yourself</SolidButton>
+      </div>
+      <div className='horizontal-center'>
+        <p style={{fontSize: '0.8em'}} >7-day free trial or <span style={{color: 'blue'}} >Book a Demo</span> of our custom <Link to='/'>Enterprise version</Link></p>
+      </div>
     </div>
   </div>
   );

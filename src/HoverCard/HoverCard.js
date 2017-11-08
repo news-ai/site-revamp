@@ -5,7 +5,7 @@ const HoverCard = styled.div`
   margin: 10px 0;
   padding: 20px 10px;
   box-shadow: 0 3px 5px 0 rgba(0,0,0,0.08);
-  transition: box-shadow 0.3s ease-in-out;
+  transition: box-shadow 0.2s ease-in-out;
 
   &:hover {
     box-shadow: 0 5px 15px 2px rgba(0, 0, 0, 0.1);
