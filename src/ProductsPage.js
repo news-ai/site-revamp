@@ -92,12 +92,20 @@ class PersonalizeYourPitch extends Component {
             </div>
           </div>
           <div style={{padding: '0 20px'}} >
-            <div className='vertical-center' style={{margin: '30px 0'}} >
+            <div style={{
+              margin: '30px 0',
+              display: 'flex',
+              justifyContent: 'space-around',
+              flexDirection: 'row',
+              flexWrap: 'wrap'
+            }} >
               <div style={{
-                padding: 30,
-                maxWidth: 600
+                maxWidth: 600,
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center'
               }} >
-                <div>
+                <div className='horizontal-center'>
                   <span style={{fontSize: '1.2em'}} >1. Draft Templates and Preview</span>
                 </div>
                 <p>Build and manage your press release/campaign/content in our full-page Rich-text editor</p>
@@ -105,7 +113,7 @@ class PersonalizeYourPitch extends Component {
               <div style={{padding: 15}} >
                 <img
                 style={{boxShadow: '0 5px 7px 0 rgba(0,0,0,0.08)'}} 
-                height={350} src={listpageEmailEditor}
+                height={330} src={listpageEmailEditor}
                 />
               </div>
             </div>
@@ -114,30 +122,41 @@ class PersonalizeYourPitch extends Component {
               display: 'flex',
               justifyContent: 'space-around',
               flexDirection: 'row',
+              flexWrap: 'wrap'
             }} >
               <div style={{padding: 15}} >
                 <img
                 style={{boxShadow: '0 5px 7px 0 rgba(0,0,0,0.08)'}} 
-                height={350} src={plainListview}
+                height={270} src={plainListview}
                 />
               </div>
               <div style={{
-                padding: 30,
-                maxWidth: 600
+                maxWidth: 600,
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center'
               }} >
-                <div>
+                <div className='horizontal-center'>
                   <span style={{fontSize: '1.2em'}} >2. Build List and Merge</span>
                 </div>
                 <p>Upload your lists, if we have the contact in the database, we'll autofill some fields like Publication/socials/etc.</p>
                 <p>Merge your fields using the template you built in Template Manager or create a new one in the Email Editor tab</p>
               </div>
             </div>
-            <div className='vertical-center' style={{margin: '30px 0'}} >
+            <div style={{
+              margin: '30px 0',
+              display: 'flex',
+              justifyContent: 'space-around',
+              flexDirection: 'row',
+              flexWrap: 'wrap'
+            }} >
               <div style={{
-                padding: 30,
-                maxWidth: 600
+                maxWidth: 600,
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center'
               }} >
-                <div>
+                <div className='horizontal-center'>
                   <span style={{fontSize: '1.2em'}} >3. Review and Edit</span>
                 </div>
                 <p>Have a few emails you want to pay special attention to? We generate a preview of all the emails you are sending and you can edit them on the spot!</p>
@@ -147,16 +166,24 @@ class PersonalizeYourPitch extends Component {
               height={350} src={listpageEmailEditor}
               />
             </div>
-            <div className='vertical-center' style={{margin: '30px 0'}} >
+            <div style={{
+              margin: '30px 0',
+              display: 'flex',
+              justifyContent: 'space-around',
+              flexDirection: 'row',
+              flexWrap: 'wrap'
+            }} >
               <img
               style={{boxShadow: '0 3px 5px 0 rgba(0,0,0,0.08)'}} 
               height={350} src={listpageEmailEditor}
               />
               <div style={{
-                padding: 30,
-                maxWidth: 600
+                maxWidth: 600,
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center'
               }} >
-                <div>
+                <div className='horizontal-center'>
                   <span style={{fontSize: '1.2em'}} >4. Schedule, Send, and Evaluate</span>
                 </div>
                 <p>Schedule a future date, switch client email that you are using, and then click send! Next step, check how your emails performed by going to ANALYTICS LINK HERE.</p>
@@ -308,7 +335,7 @@ const ProductOverview = () => (
     </ProductFeatureCard>
     <ProductFeatureCard
     textBlockPosition='left'
-    title='PERSONALIZE YOUR PITCH'
+    title='Pitch Workflow'
     tagline="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
     to='/products/personalize-pitch'
     imgSrc={plainListviewSmall}

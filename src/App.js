@@ -91,10 +91,10 @@ class App extends Component {
                     <p> NewsAI </p> 
                   </div>
                 </Link>
-                <ul className='right-nav'> 
-                  <Link to='/products' style={{textDecoration: 'none', color: 'white'}}><li className='link-nav'> Product </li></Link>
-                  <Link to='/pricing' style={{textDecoration: 'none', color: 'white'}}><li className='link-nav'> Pricing </li></Link>
-                  <li className='link-nav'><a href='https://www.newsai.co/blog/' style={{textDecoration: 'none', color:'white'}}> Blog </a></li> 
+                <div className='right-nav'> 
+                  <Link to='/products' style={{textDecoration: 'none', color: 'white'}}><div className='link-nav'> Product </div></Link>
+                  <Link to='/pricing' style={{textDecoration: 'none', color: 'white'}}><div className='link-nav'> Pricing </div></Link>
+                  <div className='link-nav'><a href='https://www.newsai.co/blog/' style={{textDecoration: 'none', color:'white'}}> Blog </a></div> 
                   <a
                   href='https://tabulae.newsai.co'
                   className='link-nav'
@@ -108,7 +108,7 @@ class App extends Component {
                     fontWeight: 200,
                     fontSize: '1em',
                   }} > Login </a>
-                </ul>  
+                </div>  
               </nav> 
             </div> 
           </div>
